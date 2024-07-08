@@ -87,6 +87,12 @@ mission "Omnis: mod settings"
 				"reputation: Hai (Unfettered Civilians)" = 10
 				"reputation: Heliarch" = 1
 				"reputation: Heliarch Test Dummy" = -1000
+				"reputation: House Aqrabe" = 0
+				"reputation: House Chydiyi" = 0
+				"reputation: House Kaatrij" = 0
+				"reputation: House Myurej" = 0
+				"reputation: House Seineq" = 0
+				"reputation: House Sioeora" = 0
 				"reputation: Independent" = 10
 				"reputation: Independent (Killable)" = 10
 				"reputation: Indigenous Lifeform" = 1
