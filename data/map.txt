@@ -1786,6 +1786,7 @@ system "Ka'het "
 	government "Faction"
 	link "Drak "
 	link "Remnant "
+	link "Successors "
 	pos 83 -9721
 	object "  Ka'het"
 		sprite "asteroid/yottrite/spin"
@@ -2089,6 +2090,13 @@ system "Sheragi "
 		distance 900
 		offset 60
 		sprite "ship/blackdiamond"
+system "Successors "
+	"jump range" 3000
+	government "Faction"
+	link "Ka'het "
+	pos -42 -9363
+	object "  Successors"
+		sprite "asteroid/yottrite/spin"
 system "Vyrmeid "
 	"jump range" 3000
 	government "Faction"
