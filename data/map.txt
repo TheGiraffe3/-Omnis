@@ -1148,6 +1148,7 @@ system "Avgi "
 	"jump range" 3000
 	government "Faction"
 	link "Aberrant "
+	link "Windjammer "
 	object "  Avgi"
 		sprite "asteroid/yottrite/spin"
 	# Arena
@@ -2421,3 +2422,10 @@ system "Whispering Void "
 		distance 900
 		offset 30
 		sprite "ship/pincer beast"
+system "Windjammer "
+	pos -240 -9621
+	"jump range" 3000
+	government "Faction"
+	link "Avgi "
+	object "  Windjammer"
+		sprite "asteroid/yottrite/spin"
