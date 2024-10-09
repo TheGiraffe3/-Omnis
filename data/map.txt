@@ -1091,56 +1091,57 @@ system "Aberrant "
 	pos -40 -9669
 	"jump range" 3000
 	government "Faction"
+	link "Avgi "
 	link "Ka'het "
 	object "  Aberrant"
 		sprite "asteroid/yottrite/spin"
 	# Arena
 	object "Aberrant Chomper  "
-		distance 900
+		distance 600
 		offset 30
 		sprite "ship/aberrant chomper"
 	object "Aberrant Hugger  "
-		distance 900
+		distance 600
 		offset 60
 		sprite "ship/aberrant hugger"
 	object "Aberrant Junior  "
-		distance 900
+		distance 600
 		offset 90
 		sprite "ship/aberrant junior"
 	object "Aberrant Latte  "
-		distance 900
+		distance 600
 		offset 120
 		sprite "ship/aberrant latte"
 	object "Aberrant Longfellow  "
-		distance 900
+		distance 600
 		offset 150
 		sprite "ship/aberrant longfellow"
 	object "Aberrant Mole  "
-		distance 900
+		distance 600
 		offset 180
 		sprite "ship/aberrant mole"
 	object "Aberrant Pike  "
-		distance 900
+		distance 600
 		offset 210
 		sprite "ship/aberrant pike"
 	object "Aberrant Pileup  "
-		distance 900
+		distance 600
 		offset 240
 		sprite "ship/aberrant pileup"
 	object "Aberrant Traincar  "
-		distance 900
+		distance 600
 		offset 270
 		sprite "ship/aberrant traincar"
 	object "Aberrant Trip  "
-		distance 900
+		distance 600
 		offset 300
 		sprite "ship/aberrant trip"
 	object "Aberrant Triplet  "
-		distance 900
+		distance 600
 		offset 330
 		sprite "ship/aberrant triplet"
 	object "Aberrant Whiskers  "
-		distance 900
+		distance 600
 		sprite "ship/aberrant whiskers"
 system "Avgi "
 	pos -203 -9621
