@@ -1087,6 +1087,161 @@ system "Omnis"
 		offset 36
 		sprite "ship/gegno kyanite"
 #	Factions
+system "Aberrant "
+	pos -40 -9669
+	"jump range" 3000
+	government "Faction"
+	link "Ka'het "
+	object "  Aberrant"
+		sprite "asteroid/yottrite/spin"
+	# Arena
+	object "Aberrant Chomper  "
+		distance 900
+		offset 30
+		sprite "ship/aberrant chomper"
+	object "Aberrant Hugger  "
+		distance 900
+		offset 60
+		sprite "ship/aberrant hugger"
+	object "Aberrant Junior  "
+		distance 900
+		offset 90
+		sprite "ship/aberrant junior"
+	object "Aberrant Latte  "
+		distance 900
+		offset 120
+		sprite "ship/aberrant latte"
+	object "Aberrant Longfellow  "
+		distance 900
+		offset 150
+		sprite "ship/aberrant longfellow"
+	object "Aberrant Mole  "
+		distance 900
+		offset 180
+		sprite "ship/aberrant mole"
+	object "Aberrant Pike  "
+		distance 900
+		offset 210
+		sprite "ship/aberrant pike"
+	object "Aberrant Pileup  "
+		distance 900
+		offset 240
+		sprite "ship/aberrant pileup"
+	object "Aberrant Traincar  "
+		distance 900
+		offset 270
+		sprite "ship/aberrant traincar"
+	object "Aberrant Trip  "
+		distance 900
+		offset 300
+		sprite "ship/aberrant trip"
+	object "Aberrant Triplet  "
+		distance 900
+		offset 330
+		sprite "ship/aberrant triplet"
+	object "Aberrant Whiskers  "
+		distance 900
+		sprite "ship/aberrant whiskers"
+system "Avgi "
+	pos -203 -9621
+	"jump range" 3000
+	government "Faction"
+	link "Aberrant "
+	object "  Avgi"
+		sprite "asteroid/yottrite/spin"
+	# Arena
+	object "Akoustiki  "
+		distance 1200
+		offset 15
+		sprite "ship/avgi akoustiki"
+	object "Atenuatia  "
+		distance 1200
+		offset 30
+		sprite "ship/avgi atenuatia"
+	object "Avlaki  "
+		distance 1200
+		offset 45
+		sprite "ship/avgi avlaki"
+	object "Diaspersi  "
+		distance 1200
+		offset 60
+		sprite "ship/avgi diaspersi"
+	object "Difraktos  "
+		distance 1200
+		offset 75
+		sprite "ship/avgi difraktos"
+	object "Entasi  "
+		distance 1200
+		offset 90
+		sprite "ship/avgi entasi"
+	object "Frequentia  "
+		distance 1200
+		offset 105
+		sprite "ship/avgi frequentia"
+	object "Harmonikos  "
+		distance 1200
+		offset 120
+		sprite "ship/avgi harmonikos"
+	object "Interferos  "
+		distance 1200
+		offset 135
+		sprite "ship/avgi interferos"
+	object "Koryfi  "
+		distance 1200
+		offset 150
+		sprite "ship/avgi koryfi"
+	object "Melodikos  "
+		distance 1200
+		offset 165
+		sprite "ship/avgi melodikos"
+	object "Modified Tachytia  "
+		distance 1200
+		offset 180
+		sprite "ship/avgi tachytia"
+	object "Optikon  "
+		distance 1200
+		offset 195
+		sprite "ship/avgi optikon"
+	object "Phononos  "
+		distance 1200
+		offset 210
+		sprite "ship/avgi phononos"
+	object "Photikon  "
+		distance 1200
+		offset 225
+		sprite "ship/avgi photikon"
+	object "Polari  "
+		distance 1200
+		offset 240
+		sprite "ship/avgi polari"
+	object "Prismaios  "
+		distance 1200
+		offset 255
+		sprite "ship/avgi prismaios"
+	object "Refraktos  "
+		distance 1200
+		offset 270
+		sprite "ship/avgi refraktos"
+	object "Sonikis  "
+		distance 1200
+		offset 285
+		sprite "ship/avgi sonikis"
+	object "Tremoros  "
+		distance 1200
+		offset 300
+		sprite "ship/avgi tremoros"
+	object "Undsyni  "
+		distance 1200
+		offset 315
+		sprite "ship/avgi undsyni"
+	object "Undulon  "
+		distance 1200
+		offset 330
+		sprite "ship/avgi undulon"
+	object "Vibratia  "
+		distance 1200
+		offset 345
+		sprite "ship/avgi vibratia"
 system "Bunrodea "
 	"jump range" 3000
 	government "Faction"
