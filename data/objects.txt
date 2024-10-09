@@ -203,6 +203,27 @@ planet "Deprecated "
 		recharges all
 		services all
 #	Sales: Factions
+planet " Aberrant"
+	government "Faction"
+	bribe 0
+	description ""
+	port "Settings"
+		recharges all
+		services all
+	outfitter "omnis"
+	shipyard "omnis"
+	outfitter "aberrant"
+	shipyard "aberrant"
+planet "  Aberrant"
+	bribe 0
+	description ""
+	port "Settings"
+		recharges all
+		services all
+	outfitter "omnis"
+	shipyard "omnis"
+	outfitter "aberrant"
+	shipyard "aberrant"
 planet " Avgi"
 	government "Faction"
 	bribe 0
@@ -853,6 +874,27 @@ planet "  Whispering Void"
 	shipyard "whispering void"
 	outfitter "Elenctic Commune Basic"
 	shipyard "Elenctic Commune Basic"
+planet " Windjammer"
+	government "Faction"
+	bribe 0
+	description ""
+	port "Settings"
+		recharges all
+		services all
+	outfitter "omnis"
+	shipyard "omnis"
+	outfitter "windjammer"
+	shipyard "windjammer"
+planet "  Windjammer"
+	bribe 0
+	description ""
+	port "Settings"
+		recharges all
+		services all
+	outfitter "omnis"
+	shipyard "omnis"
+	outfitter "windjammer"
+	shipyard "windjammer"
 #	Star
 star "star/nova"
 	power 1
