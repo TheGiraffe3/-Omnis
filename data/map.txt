@@ -11,6 +11,8 @@ system "Omnis"
 	pos -268 -9863
 	object
 		sprite "star/nova"
+	object "Everything "
+		sprite "star/nova-core"
 	object "omnisGatewayRutilicus"
 		distance 300
 		offset 60
@@ -27,8 +29,38 @@ system "Omnis"
 		distance 300
 		offset 240
 		sprite "sprite/wispGreen"
-	object "Everything "
-		sprite "star/nova-core"
+	object "omnisGatewayWanderer"
+		distance 300
+		offset 240
+		sprite "sprite/wispGreen"
+	object "omnisGatewayHai"
+		distance 300
+		offset 240
+		sprite "sprite/wispGreen"
+	object "omnisGatewayDeep"
+		distance 300
+		offset 240
+		sprite "sprite/wispGreen"
+	object "omnisGatewayUnfettered"
+		distance 300
+		offset 240
+		sprite "sprite/wispGreen"
+	object "omnisGatewayRemnant"
+		distance 300
+		offset 240
+		sprite "sprite/wispGreen"
+	object "omnisGatewayKahet"
+		distance 300
+		offset 240
+		sprite "sprite/wispGreen"
+	object "omnisGatewayIncipias"
+		distance 300
+		offset 240
+		sprite "sprite/wispGreen"
+	object "omnisGatewaySuccessors"
+		distance 300
+		offset 240
+		sprite "sprite/wispGreen"
 	object "Developer "
 		distance 300
 		offset 300
