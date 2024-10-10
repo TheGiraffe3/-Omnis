@@ -76,8 +76,8 @@ mission "Omnis: existing save warning"
 			label "noBoons"
 			action
 				event "Omnis: open wormholes"
-			`	Omnis can always be accessed through a wormhole in Rutilicus. I wonder how long it'll take for you to give in to cheating.`
+			`	Omnis can always be accessed through wormholes in each faction's capital. I wonder how long it'll take for you to give in to cheating.`
 				decline
 	to offer
 		not "omnisStart"
-	waypoint "Rutilicus"
+	mark "Rutilicus"
