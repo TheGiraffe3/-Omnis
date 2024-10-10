@@ -39,8 +39,8 @@ planet "omnisGatewayWanderers"
 	government "Omnis Wormhole Access"
 
 wormhole "omnisGatewayWanderers"
-	"display name" "Vara K'chrai"
-	link "Omnis" "Vara K'chrai"
+	"display name" "Ka'ch'chrai"
+	link "Omnis" "Ka'ch'chrai"
 
 
 planet "omnisGatewayHai"
@@ -98,7 +98,7 @@ wormhole "omnisGatewayRemnant"
 
 
 planet "omnisGatewayHet"
-	wormhole "omnisGatewayHet
+	wormhole "omnisGatewayHet"
 	government "Omnis Wormhole Access"
 
 wormhole "omnisGatewayHet"
