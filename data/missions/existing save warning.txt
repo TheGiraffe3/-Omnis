@@ -39,7 +39,7 @@ mission "Omnis: existing save warning"
 				`	(Abort.)`
 					goto "return"
 			action
-				event "Omnis: open wormhole"
+				event "Omnis: open wormholes"
 				event "Omnis: reveal omnis"
 				event "Omnis: reveal vanilla"
 				outfit "   Omnipotence"
