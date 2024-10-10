@@ -159,3 +159,93 @@ planet "solGatewayOmnis"
 wormhole "solGatewayOmnis"
 	"display name" "Omnis"
 	link "Sol" "Omnis"
+
+
+planet "wandererGatewayOmnis"
+	wormhole "wandererGatewayOmnis"
+	government "Omnis Wormhole Access"
+
+wormhole "wandererGatewayOmnis"
+	"display name" "Omnis"
+	link "Ka'ch'chrai" "Omnis"
+
+
+planet "haiGatewayOmnis"
+	wormhole "haiGatewayOmnis"
+	government "Omnis Wormhole Access"
+
+wormhole "haiGatewayOmnis"
+	"display name" "Omnis"
+	link "Ya Hai" "Omnis"
+
+
+planet "uhaiGatewayOmnis"
+	wormhole "uhaiGatewayOmnis"
+	government "Omnis Wormhole Access"
+
+wormhole "uhaiGatewayOmnis"
+	"display name" "Omnis"
+	link "Wah Yoot" "Omnis"
+
+
+planet "bunrodeaGatewayOmnis"
+	wormhole "bunrodeaGatewayOmnis"
+	government "Omnis Wormhole Access"
+
+wormhole "bunrodeaGatewayOmnis"
+	"display name" "Omnis"
+	link "Erabu Lemeta" "Omnis"
+
+
+planet "gegnoGatewayOmnis"
+	wormhole "gegnoGatewayOmnis"
+	government "Omnis Wormhole Access"
+
+wormhole "gegnoGatewayOmnis"
+	"display name" "Omnis"
+	link "Heutesl" "Omnis"
+
+
+planet "deepGatewayOmnis"
+	wormhole "deepGatewayOmnis"
+	government "Omnis Wormhole Access"
+
+wormhole "deepGatewayOmnis"
+	"display name" "Omnis"
+	link "Epsilon Leonis" "Omnis"
+
+
+planet "remnantGatewayOmnis"
+	wormhole "remnantGatewayOmnis"
+	government "Omnis Wormhole Access"
+
+wormhole "remnantGatewayOmnis"
+	"display name" "Omnis"
+	link "Pantica" "Omnis"
+
+
+planet "hetGatewayOmnis"
+	wormhole "hetGatewayOmnis"
+	government "Omnis Wormhole Access"
+
+wormhole "hetGatewayOmnis"
+	"display name" "Omnis"
+	link "Fereti" "Omnis"
+
+
+planet "incipiasGatewayOmnis"
+	wormhole "incipiasGatewayOmnis"
+	government "Omnis Wormhole Access"
+
+wormhole "incipiasGatewayOmnis"
+	"display name" "Omnis"
+	link "Dom'us" "Omnis"
+
+
+planet "successorGatewayOmnis"
+	wormhole "successorGatewayOmnis"
+	government "Omnis Wormhole Access"
+
+wormhole "successorGatewayOmnis"
+	"display name" "Omnis"
+	link "Uuoru-Kella" "Omnis"
