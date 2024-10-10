@@ -49,7 +49,7 @@ system "Omnis"
 		distance 300
 		offset 240
 		sprite "sprite/wispGreen"
-	object "omnisGatewayKahet"
+	object "omnisGatewayHet"
 		distance 300
 		offset 240
 		sprite "sprite/wispGreen"
@@ -58,6 +58,14 @@ system "Omnis"
 		offset 240
 		sprite "sprite/wispGreen"
 	object "omnisGatewaySuccessors"
+		distance 300
+		offset 240
+		sprite "sprite/wispGreen"
+	object "omnisGatewayGegno"
+		distance 300
+		offset 240
+		sprite "sprite/wispGreen"
+	object "omnisGatewayBunrodea"
 		distance 300
 		offset 240
 		sprite "sprite/wispGreen"
