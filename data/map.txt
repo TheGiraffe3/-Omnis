@@ -15,59 +15,59 @@ system "Omnis"
 		sprite "star/nova-core"
 	object "omnisGatewayRutilicus"
 		distance 300
-		offset 60
+		offset 22.5
 		sprite "sprite/wispGreen"
 	object "omnisGatewayGammaCorvi"
 		distance 300
-		offset 120
+		offset 45
 		sprite "sprite/wispGreen"
 	object "omnisGatewayMarkab"
 		distance 300
-		offset 180
+		offset 67.5
 		sprite "sprite/wispGreen"
 	object "omnisGatewaySol"
 		distance 300
-		offset 240
+		offset 90
 		sprite "sprite/wispGreen"
 	object "omnisGatewayWanderer"
 		distance 300
-		offset 240
+		offset 112.5
 		sprite "sprite/wispGreen"
 	object "omnisGatewayHai"
 		distance 300
-		offset 240
+		offset 135
 		sprite "sprite/wispGreen"
 	object "omnisGatewayDeep"
 		distance 300
-		offset 240
+		offset 157.5
 		sprite "sprite/wispGreen"
 	object "omnisGatewayUnfettered"
 		distance 300
-		offset 240
+		offset 180
 		sprite "sprite/wispGreen"
 	object "omnisGatewayRemnant"
 		distance 300
-		offset 240
+		offset 202.5
 		sprite "sprite/wispGreen"
 	object "omnisGatewayHet"
 		distance 300
-		offset 240
+		offset 225
 		sprite "sprite/wispGreen"
 	object "omnisGatewayIncipias"
 		distance 300
-		offset 240
+		offset 247.5
 		sprite "sprite/wispGreen"
 	object "omnisGatewaySuccessors"
 		distance 300
-		offset 240
+		offset 270
 		sprite "sprite/wispGreen"
 	object "omnisGatewayGegno"
 		distance 300
-		offset 240
+		offset 292.5
 		sprite "sprite/wispGreen"
 	object "omnisGatewayBunrodea"
 		distance 300
-		offset 240
+		offset 315
 		sprite "sprite/wispGreen"
 	object "Developer "
 		distance 300
