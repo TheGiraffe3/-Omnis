@@ -5,9 +5,7 @@ mission "Omnis: open wormholes"
 		event "Omnis: open wormholes"
 		fail
 	to offer
-		or
-			has "omnisStart"
-			has "Omnis: open wormhole: failed"
+		has "omnisStart"
 
 event "Omnis: open wormholes"
 	system "Rutilicus"
@@ -53,7 +51,7 @@ event "Omnis: open wormholes"
 		add object "successorGatewayOmnis"
 			sprite "sprite/wispGreen"
 
-event "omnis: faction wormholes enabled"
+event "omnis: faction wormholes"
 	system "Gamma Corvi"
 		add object "gammacorviGatewayOmnis"
 			sprite "sprite/wispGreen"
@@ -94,7 +92,7 @@ event "omnis: faction wormholes enabled"
 		add object "successorGatewayOmnis"
 			sprite "sprite/wispGreen"
 
-event "omnis: faction wormholes disabled"
+event "omnis: no faction wormholes"
 	system "Gamma Corvi"
 		remove object "gammacorviGatewayOmnis"
 			sprite "sprite/wispGreen"
