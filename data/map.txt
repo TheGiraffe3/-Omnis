@@ -29,7 +29,7 @@ system "Omnis"
 		distance 300
 		offset 90
 		sprite "sprite/wispGreen"
-	object "omnisGatewayWanderer"
+	object "omnisGatewayWanderers"
 		distance 300
 		offset 112.5
 		sprite "sprite/wispGreen"
@@ -57,7 +57,7 @@ system "Omnis"
 		distance 300
 		offset 247.5
 		sprite "sprite/wispGreen"
-	object "omnisGatewaySuccessors"
+	object "omnisGatewaySuccessor"
 		distance 300
 		offset 270
 		sprite "sprite/wispGreen"
@@ -71,7 +71,7 @@ system "Omnis"
 		sprite "sprite/wispGreen"
 	object "Developer "
 		distance 300
-		offset 300
+		offset 337.5
 		sprite "asteroid/yottrite/spin"
 	object "Deprecated "
 		distance 300
