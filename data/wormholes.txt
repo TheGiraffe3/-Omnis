@@ -34,6 +34,97 @@ wormhole "omnisGatewaySol"
 	link "Omnis" "Sol"
 
 
+planet "omnisGatewayWanderers"
+	wormhole "omnisGatewayWanderers"
+	government "Omnis Wormhole Access"
+
+wormhole "omnisGatewayWanderers"
+	"display name" "Vara K'chrai"
+	link "Omnis" "Vara K'chrai"
+
+
+planet "omnisGatewayHai"
+	wormhole "omnisGatewayHai"
+	government "Omnis Wormhole Access"
+
+wormhole "omnisGatewayHai"
+	"display name" "Ya Hai"
+	link "Omnis" "Ya Hai"
+
+
+planet "omnisGatewayUnfettered"
+	wormhole "omnisGatewayUnfettered"
+	government "Omnis Wormhole Access"
+
+wormhole "omnisGatewayUnfettered"
+	"display name" "Wah Yoot"
+	link "Omnis" "Wah Yoot"
+
+
+planet "omnisGatewayBunrodea"
+	wormhole "omnisGatewayBunrodea"
+	government "Omnis Wormhole Access"
+
+wormhole "omnisGatewayBunrodea"
+	"display name" "Erabu Lemeta"
+	link "Omnis" "Erabu Lemeta"
+
+
+planet "omnisGatewayGegno"
+	wormhole "omnisGatewayGegno"
+	government "Omnis Wormhole Access"
+
+wormhole "omnisGatewayGegno"
+	"display name" "Heutesl"
+	link "Omnis" "Heutesl"
+
+
+planet "omnisGatewayDeep"
+	wormhole "omnisGatewayDeep"
+	government "Omnis Wormhole Access"
+
+wormhole "omnisGatewayDeep"
+	"display name" "Epsilon Leonis"
+	link "Omnis" "Epsilon Leonis"
+
+
+planet "omnisGatewayRemnant"
+	wormhole "omnisGatewayRemnant"
+	government "Omnis Wormhole Access"
+
+wormhole "omnisGatewayRemnant"
+	"display name" "Pantica"
+	link "Omnis" "Pantica"
+
+
+planet "omnisGatewayHet"
+	wormhole "omnisGatewayHet
+	government "Omnis Wormhole Access"
+
+wormhole "omnisGatewayHet"
+	"display name" "Fereti"
+	link "Omnis" "Fereti"
+
+
+planet "omnisGatewayIncipias"
+	wormhole "omnisGatewayIncipias"
+	government "Omnis Wormhole Access"
+
+wormhole "omnisGatewayIncipias"
+	"display name" "Dom'us"
+	link "Omnis" "Dom'us"
+
+
+planet "omnisGatewaySuccessor"
+	wormhole "omnisGatewaySuccessor"
+	government "Omnis Wormhole Access"
+
+wormhole "omnisGatewaySuccessor"
+	"display name" "Uuoru-Kella"
+	link "Omnis" "Uuoru-Kella"
+
+
+
 planet "rutilicusGatewayOmnis"
 	wormhole "rutilicusGatewayOmnis"
 	government "Omnis Wormhole Access"
