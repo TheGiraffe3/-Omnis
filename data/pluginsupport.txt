@@ -150,58 +150,97 @@ event "omnis: plugin integration removed"
 		remove shipyard "wanderer plugin"
 
 
+# Note: Eventually, these shipyards/outfitters should be
+# completely empty. However, at the moment, leaving them empty causes
+# errors. When there is a way to purposefully leave a shipyard/
+# outfitter empty (e.g. some sort of tag) then the contents of these
+# should be removed.
+
+# Also note that at the moment the contents work because they're already
+# on a planet with the "omnis" shipyard and outfitter. If they get
+# moved to a different planet that isn't supposed to have those, there
+# could be trouble.
+
 outfitter "bunrodea plugin"
+	"Mass Addition"
 
 outfitter "coalition plugin"
+	"Mass Addition"
 
 outfitter "drak plugin"
+	"Mass Addition"
 
 outfitter "gegno plugin"
+	"Mass Addition"
 
 outfitter "incipias plugin"
+	"Mass Addition"
 
 outfitter "hai plugin"
+	"Mass Addition"
 
 outfitter "human plugin"
+	"Mass Addition"
 
 outfitter "ka'het plugin"
+	"Mass Addition"
 
 outfitter "korath plugin"
+	"Mass Addition"
 
 outfitter "pug plugin"
+	"Mass Addition"
 
 outfitter "quarg plugin"
+	"Mass Addition"
 
 outfitter "sheragi plugin"
+	"Mass Addition"
 
 outfitter "successor plugin"
+	"Mass Addition"
 
 outfitter "wanderer plugin"
+	"Mass Addition"
 
 shipyard "bunrodea plugin"
+	"Caster"
 
 shipyard "coalition plugin"
+	"Caster"
 
 shipyard "drak plugin"
+	"Caster"
 
 shipyard "gegno plugin"
+	"Caster"
 
 shipyard "incipias plugin"
+	"Caster"
 
 shipyard "hai plugin"
+	"Caster"
 
 shipyard "human plugin"
+	"Caster"
 
 shipyard "ka'het plugin"
+	"Caster"
 
 shipyard "korath plugin"
+	"Caster"
 
 shipyard "pug plugin"
+	"Caster"
 
 shipyard "quarg plugin"
+	"Caster"
 
 shipyard "sheragi plugin"
+	"Caster"
 
 shipyard "successor plugin"
+	"Caster"
 
 shipyard "wanderer plugin"
+	"Caster"
