@@ -568,11 +568,13 @@ mission "Omnis: mod settings"
 			label 1601
 			action
 				event "omnis: plugin integration"
+				set "omnis: plugin integration"
 			`Plugin integration has been turned on.`
 				goto 0000
 			label 1602
 			action
 				event "omnis: plugin integration removed"
+				clear "omnis: plugin integration"
 			`Plugin integration has been turned off.`
 				goto 0000
 			label 2000
