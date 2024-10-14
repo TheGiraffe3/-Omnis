@@ -43,3 +43,53 @@ mission "Omnis: FW Skip 1"
 		set "FW Rand 1B: active"
 		dialog "Go to Wayfarer to choose which Free Worlds mission chain completion you will do."
 		fail
+
+
+mission "Omnis: "
+	job
+	name ""
+	description "Skip ."
+	to offer
+		has ""
+	on accept
+		set ": done"
+		event ""
+		dialog " skipped ."
+		fail
+
+mission "Omnis: "
+	job
+	name ""
+	description "Skip ."
+	to offer
+		has ""
+	on accept
+		set ": done"
+		event ""
+		dialog " skipped ."
+		fail
+
+
+mission "Omnis: "
+	job
+	name ""
+	description "Skip ."
+	to offer
+		has ""
+	on accept
+		set ": done"
+		event ""
+		dialog " skipped ."
+		fail
+
+mission "Omnis: "
+	job
+	name ""
+	description "Skip ."
+	to offer
+		has ""
+	on accept
+		set ": done"
+		event ""
+		dialog " skipped ."
+		fail
