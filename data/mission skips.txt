@@ -33,3 +33,13 @@ mission "Omnis: Emerald Sword 2 Skip"
 		event "zubenelhakrabi discovered"
 		dialog "To get the Emerald Sword, all you need to do is get two jump drives and 150 bunks. Land on Zug to complete the mission chain."
 		fail
+
+
+mission "Omnis: FW Skip 1"
+	job
+	name "Skip Free Worlds until branch"
+	description "Skip to the mission just before you decide whether to do FW Checkmate or FW Reconciliation."
+	on accept
+		set "FW Rand 1B: active"
+		dialog "Go to Wayfarer to choose which Free Worlds mission chain completion you will do."
+		fail
