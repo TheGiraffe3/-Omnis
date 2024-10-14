@@ -1,3 +1,37 @@
+mission "Omnis: FW Skip 1"
+	job
+	name "Skip Free Worlds until branch"
+	description "Skip to the mission just before you decide whether to do FW Checkmate or FW Reconciliation."
+	on accept
+		set "FW Rand 1B: active"
+		dialog "Go to Wayfarer to choose which Free Worlds mission chain completion you will do."
+		fail
+
+mission "Omnis: "
+	job
+	name ""
+	description "Skip ."
+	to offer
+		has ""
+	on accept
+		set ": done"
+		event ""
+		dialog " skipped ."
+		fail
+
+mission "Omnis: "
+	job
+	name ""
+	description "Skip ."
+	to offer
+		has ""
+	on accept
+		set ": done"
+		event ""
+		dialog " skipped ."
+		fail
+
+
 disable mission
 	"Rim Archaeology 5B"
 
@@ -35,16 +69,6 @@ mission "Omnis: Emerald Sword 2 Skip"
 		fail
 
 
-mission "Omnis: FW Skip 1"
-	job
-	name "Skip Free Worlds until branch"
-	description "Skip to the mission just before you decide whether to do FW Checkmate or FW Reconciliation."
-	on accept
-		set "FW Rand 1B: active"
-		dialog "Go to Wayfarer to choose which Free Worlds mission chain completion you will do."
-		fail
-
-
 mission "Omnis: Skip to Remnant Technology Available"
 	job
 	name "Remnant Technology Available mission"
@@ -68,26 +92,13 @@ mission "Omnis: Wanderer Skip to Defend Ap'arak"
 		dialog "You have successfully skipped the Wanderer storyline up until the point you defend Ap'arak. Go land on Tik Klai to continue the Wanderer storyline."
 		fail
 
-mission "Omnis: "
+mission "Omnis: Wanderer Skip to Exiles 1"
 	job
-	name ""
-	description "Skip ."
+	name "Wanderer Storyline to Korath Exiles"
+	description "Skip the Wanderer storyline up until the point where you talk to the Korath Exiles."
 	to offer
-		has ""
+		has "Wanderers Rek 3: done"
 	on accept
-		set ": done"
-		event ""
-		dialog " skipped ."
-		fail
-
-mission "Omnis: "
-	job
-	name ""
-	description "Skip ."
-	to offer
-		has ""
-	on accept
-		set ": done"
-		event ""
-		dialog " skipped ."
+		set "Wanderers: Sestor: Scan Drones: done"
+		dialog "You have successfully skipped the Wanderer storyline until the meeting with the Korath Exiles. Go to Desi Seledrak to continue the Wanderer storyline."
 		fail
