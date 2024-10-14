@@ -42,6 +42,8 @@ mission "Omnis: mod settings"
 					goto 1600
 					to display
 						has "omnis: plugin integration"
+				`	(Storyline Skip.)`
+					goto 1700
 				`	(Return.)`
 					goto 0000
 			label 1100
@@ -576,6 +578,22 @@ mission "Omnis: mod settings"
 				event "omnis: plugin integration removed"
 				clear "omnis: plugin integration"
 			`Plugin integration has been turned off.`
+				goto 0000
+			label 1700
+			`Which storyline would you like to skip ahead in?`
+			choice
+				`	(Free Worlds.)`
+					goto 1711
+					to display
+						not "FW Rand 1B: done"
+				`	(Free Worlds Checkmate.)`
+					goto 1712
+					to display
+						has "FW Rand 1B: done"
+				`	(Free Worlds Reconciliation.)`
+					goto 1713
+					to display
+						has "FW Rand 1B: done"
 				goto 0000
 			label 2000
 			`WARNING: These options perpetrate all saves that interact with Omnis, consider the effects of each before continuing.`
