@@ -45,17 +45,17 @@ mission "Omnis: FW Skip 1"
 		fail
 
 
-mission "Omnis: "
+mission "Omnis: Skip to Remnant Technology Available"
 	job
-	name ""
-	description "Skip ."
-	to offer
-		has ""
+	name "Remnant Technology Available mission"
+	description "Skip the Remnant storyline until their technology becomes available."
 	on accept
-		set ": done"
-		event ""
-		dialog " skipped ."
+		set "Remnant: Defense 3: done"
+		set "Remnant: Keystones: done"
+		event "remnant: void sprite research"
+		dialog "You have successfully skipped until the Technology Available mission. Go land on a Remnant planet to continue the storyline."
 		fail
+
 
 mission "Omnis: "
 	job
@@ -68,7 +68,6 @@ mission "Omnis: "
 		event ""
 		dialog " skipped ."
 		fail
-
 
 mission "Omnis: "
 	job
