@@ -5,6 +5,8 @@ mission "Omnis: Rim Archaeology Halfway Skip"
 	job
 	name "Rim Archaeology Skip"
 	description "Skip the first five missions in the Rim Archaeology mission chain."
+	to offer
+		has "main plot completed"
 	on accept
 		set "Rim Archaeology 5A: done"
 		event "rim archaeology results"
