@@ -20,3 +20,14 @@ mission "Omnis: Rim Archaeology 5B"
 		government Quarg
 		personality heroic staying uninterested
 		ship "Quarg Wardragon" "Gloref Esa Kurayi"
+
+
+mission "Omnis: Emerald Sword 2 Skip"
+	job
+	name "Emerald Sword Skip"
+	description "Skip to the mission just before you get the Emerald Sword."
+	on accept
+		set "Sheragi Archaeology: The Emerald Sword 2: active"
+		event "zubenelhakrabi discovered"
+		dialog "To get the Emerald Sword, all you need to do is get two jump drives and 150 bunks. Land on Zug to complete the mission chain."
+		fail
