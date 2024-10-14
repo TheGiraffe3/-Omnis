@@ -1,1 +1,22 @@
-mission "Omnis: Sheragi Archaeology Halfway Skip"
+disable mission
+	"Rim Archaeology 5B"
+
+mission "Omnis: Rim Archaeology Halfway Skip"
+	job
+	name "Rim Archaeology Skip"
+	description "Skip the first five missions in the Rim Archaeology mission chain."
+	on accept
+		set "Rim Archaeology 5A: done"
+		event "rim archaeology results"
+		dialog "The first five missions have been skipped. Go to Zug and Zug's spaceport to continue the mission chain from this point."
+		fail
+
+mission "Omnis: Rim Archaeology 5B"
+	landing
+	invisible
+	to offer
+		has "Omnis: Rim Archaeology Halfway Skip: failed"
+	npc kill
+		government Quarg
+		personality heroic staying uninterested
+		ship "Quarg Wardragon" "Gloref Esa Kurayi"
