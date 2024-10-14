@@ -10,7 +10,7 @@ mission "Omnis: FW Skip 1"
 mission "Omnis: FW Skip Checkmate"
 	job
 	name "Skip to the end of FW Checkmate"
-	description "Skip ."
+	description "Skip the Free Worlds storyline until the end of Checkmate."
 	to offer
 		has "FW Rand 1B: active"
 	on accept
