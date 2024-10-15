@@ -582,7 +582,11 @@ mission "Omnis: mod settings"
 			label 1700
 			`Which storyline would you like to skip ahead in?`
 			choice
-				`	(Free Worlds.)`
+				`	(Skip the whole Free Worlds storyline.)`
+					goto 1710
+					to display
+						not "main plot completed"
+				`	(Free Worlds to the branch between Reconciliation and Checkmate.)`
 					goto 1711
 					to display
 						not "FW Rand 1B: done"
@@ -598,6 +602,11 @@ mission "Omnis: mod settings"
 					goto 1000
 				`	(Go back to Settings.)`
 					goto 0000
+			label 1710
+			action
+				set "main plot completed"
+			`The Free Worlds plot has been marked as complete.`
+				goto 1700
 			label 1711
 			action
 				set "FW Rand 1B: done"
