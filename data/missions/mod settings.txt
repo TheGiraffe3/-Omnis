@@ -42,7 +42,7 @@ mission "Omnis: mod settings"
 					goto 1600
 					to display
 						has "omnis: plugin integration"
-				`	(Storyline Skip.)`
+				`	(Storyline Skip Options.)`
 					goto 1700
 				`	(Return.)`
 					goto 0000
@@ -594,10 +594,14 @@ mission "Omnis: mod settings"
 					goto 1712
 					to display
 						has "FW Rand 1B: done"
+						not "omnis: skipped free worlds checkmate"
+						not "FWC Pug 6: done"
 				`	(Free Worlds Reconciliation.)`
 					goto 1713
 					to display
 						has "FW Rand 1B: done"
+						not "omnis: skipped free worlds reconciliation"
+						not "FW Syndicate Extremists 1B: done"
 				`	(Go back to Save Settings.)`
 					goto 1000
 				`	(Go back to Settings.)`
