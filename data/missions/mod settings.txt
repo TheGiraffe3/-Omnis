@@ -594,7 +594,29 @@ mission "Omnis: mod settings"
 					goto 1713
 					to display
 						has "FW Rand 1B: done"
-				goto 0000
+				`	(Go back to Save Settings.)`
+					goto 1000
+				`	(Go back to Settings.)`
+					goto 0000
+			label 1711
+			action
+				set "FW Rand 1B: done"
+			`You have successfully skipped ahead in the Free Worlds storyline until the branch between Checkmate and Reconciliation. You can either go to Wayfarer and land to continue the Free Worlds storyline or skip further ahead.`
+				goto 1700
+			label 1712
+			action
+				set "FWC Pug 6: done"
+				event "fwc pug defeated"
+			`You have successfully skipped ahead in the Free Worlds Checkmate storyline until the last mission. Land on Pugglemug to get the final mission in Free Worlds Checkmate.`
+				goto 1700
+			label 1713
+			action
+				set "FW Syndicate Extremists 1B: done"
+				event "pug flee"
+				event "navy occupies algenib"
+				event "navy done with algenib" 50
+			`You have successfully skipped ahead in the Free Worlds Reconciliation storyline until the last mission. Land on Buccaneer Bay to get the final mission in Free Worlds Reconciliation.`
+				goto 1700
 			label 2000
 			`WARNING: These options perpetrate all saves that interact with Omnis, consider the effects of each before continuing.`
 			choice
