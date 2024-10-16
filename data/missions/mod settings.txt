@@ -970,7 +970,24 @@ mission "Omnis: mod settings"
 				goto 1700
 			label 1742
 			action
-			``
+				set "Wanderers: Sestor: Scan Drones: done"
+				event "pug defend wanderers"
+				event "wanderers: the eye opens"
+				event "wanderers: derecho mass production"
+				event "wanderers: spera anatrusk colony"
+				set "Wanderers: Quarg Assistance 2: done"
+				event "wanderers: kor mereti friendly"
+				event "wanderers: kor mereti language"
+				event "wanderers: kor mereti transformation"
+				event "wanderers: hurricane mass production"
+				event "wanderers: desi seledrak"
+				event "wanderers: kor sestor are aimless"
+				set "wanderers: found the kor sestor fleet"
+				event "bombed zenith"
+				event "zenith cooling" 50
+				event "liberated zenith"
+			`You have successfully skipped ahead in the Wanderer storyline until the first meeting request with the Korath Exiles. Go land on Desi Seledrak to progress further in the Wanderer storyline.`
+				goto 1700
 			label 2000
 			`WARNING: These options perpetrate all saves that interact with Omnis, consider the effects of each before continuing.`
 			choice
