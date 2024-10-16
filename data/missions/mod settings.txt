@@ -939,6 +939,24 @@ mission "Omnis: mod settings"
 				give ship "Black Diamond" "Skeleton Key"
 			`You have successfully skipped the rest of Rim Archaeology.`
 				goto 1700
+			label 1731
+			action
+				event "remnant: change hail"
+				set "remnant: blood test pure"
+				event "remnant: defense timer"
+				set "Remnant: Defense 2: done"
+				set "Remnant: Key Stones: done"
+				event "remnant: puffin"
+				event "remnant: void sprite research"
+				set "license: Remnant"
+			`You have successfully skipped ahead in the Remnant storyline until you get the license.`
+				goto 1700
+			label 1741
+			action
+			``
+			label 1742
+			action
+			``
 			label 2000
 			`WARNING: These options perpetrate all saves that interact with Omnis, consider the effects of each before continuing.`
 			choice
