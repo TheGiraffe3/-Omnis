@@ -611,6 +611,19 @@ mission "Omnis: mod settings"
 					goto 1722
 					to display
 						has "Rim Archaeology 5A: done"
+						not "Sheragi Archaeology Epilogue: done"
+				`	(The Remnant storyline until technology becomes available.)`
+					goto 1731
+				`	(The Wanderer storyline until Defend Ap'arak.)`
+					goto 1741
+					to display
+						has "main plot completed"
+						not "Wanderers Rek 3: done"
+				`	(The Wanderer storyline until the meeting with the Korath Exiles.)`
+					goto 1742
+					to display
+						has "Wanderers Rek 3: done"
+						not "Wanderers: Sestor: Scan Drones: done"
 				`	(Go back to Save Settings.)`
 					goto 1000
 				`	(Go back to Settings.)`
