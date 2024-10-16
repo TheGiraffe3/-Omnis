@@ -602,6 +602,11 @@ mission "Omnis: mod settings"
 						has "FW Rand 1B: done"
 						not "omnis: skipped free worlds reconciliation"
 						not "FW Syndicate Extremists 1B: done"
+				`	(Rim Archaeology Halfway.)`
+					goto 1721
+					to display
+						has "main plot completed"
+						not "Rim Archaeology 5A: done"
 				`	(Go back to Save Settings.)`
 					goto 1000
 				`	(Go back to Settings.)`
@@ -897,6 +902,12 @@ mission "Omnis: mod settings"
 				event "geminus rebuilt"
 				event "martini recovers"
 			`You have successfully skipped ahead in the Free Worlds Reconciliation storyline until the last mission. Land on Buccaneer Bay to get the final mission in Free Worlds Reconciliation.`
+				goto 1700
+			label 1721
+			action
+				set "Rim Archaeology 5A: done"
+				event "rim archaeology results"
+			`You have successfully skipped to the halfway point in Rim Archaeology. Land on Zug to continue normally, or skip ahead farther.`
 				goto 1700
 			label 2000
 			`WARNING: These options perpetrate all saves that interact with Omnis, consider the effects of each before continuing.`
