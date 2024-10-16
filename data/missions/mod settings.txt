@@ -607,6 +607,10 @@ mission "Omnis: mod settings"
 					to display
 						has "main plot completed"
 						not "Rim Archaeology 5A: done"
+				`	(Rim Archaeology Completion.)`
+					goto 1722
+					to display
+						has "Rim Archaeology 5A: done"
 				`	(Go back to Save Settings.)`
 					goto 1000
 				`	(Go back to Settings.)`
@@ -908,6 +912,19 @@ mission "Omnis: mod settings"
 				set "Rim Archaeology 5A: done"
 				event "rim archaeology results"
 			`You have successfully skipped to the halfway point in Rim Archaeology. Land on Zug to continue normally, or skip ahead farther.`
+				goto 1700
+			label 1722
+			action
+				set "Sheragi Archaeology Epilogue: done"
+				event "zubenelhakrabi discovered"
+				give ship "Emerald Sword (Fixed)" "Emerald Sword"
+				give ship "Black Diamond" "Stormheart"
+				give ship "Black Diamond" "Onyx Chariot"
+				give ship "Black Diamond" "Firebrand"
+				give ship "Black Diamond" "Frostherald"
+				give ship "Black Diamond" "Ivory Talon"
+				give ship "Black Diamond" "Skeleton Key"
+			`You have successfully skipped the rest of Rim Archaeology.`
 				goto 1700
 			label 2000
 			`WARNING: These options perpetrate all saves that interact with Omnis, consider the effects of each before continuing.`
