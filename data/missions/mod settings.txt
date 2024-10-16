@@ -949,11 +949,25 @@ mission "Omnis: mod settings"
 				event "remnant: puffin"
 				event "remnant: void sprite research"
 				set "license: Remnant"
-			`You have successfully skipped ahead in the Remnant storyline until you get the license.`
+			`You have successfully skipped ahead in the Remnant storyline until you get the license. Fly around and go to the spaceport on Remnant planets to continue the Remnant storyline.`
 				goto 1700
 			label 1741
 			action
-			``
+				set "Wanderers Rek 3: done"
+				event "wanderer technology available"
+				event "wanderers: first tech increase"
+				event "battle for ik'kara'ka"
+				event "wanderers: varu mer'ek evacuated"
+				event "capture of ik'kara'ka"
+				event "wanderers: tempest mass production"
+				event "eastern evacuation"
+				event "wanderers: riptide mass production"
+				event "wanderers: vara ke'stai evacuated"
+				event "solifuge deployment"
+				event "wanderers: more systems lost"
+				event "wanderers: the eye begins to open"
+			`You have successfully skipped ahead in the Wanderer storyline until the battle for Ap'arak. Go land on Tik Klai to progress normally or skip ahead further.`
+				goto 1700
 			label 1742
 			action
 			``
