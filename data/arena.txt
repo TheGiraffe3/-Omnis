@@ -14,7 +14,7 @@ fleet "Marauder Fury "
 	government "Arena"
 	personality "heroic"
 	variant
-		"Marauder Fury"
+		"Marauder Fury (test)"
 planet "Lampyrid-Class Transport "
 	bribe 0
 	government "Arena"
