@@ -21,7 +21,7 @@ jobs:
         mkdir plugins
         cd .\plugins
         mkdir Omnis
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
       with:
         path: '.\endless-sky\plugins\Omnis'
     - name: Parse Datafiles

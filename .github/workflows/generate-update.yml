@@ -1,0 +1,46 @@
+name: Generate Data
+
+on:
+  push:
+#  schedule:
+#    - cron: '0 * * * *' # for testing, every hour
+#    - cron: '* 0 * * 1' # every Sunday
+  workflow_dispatch:
+
+jobs:
+  update:
+    name: Update Plugin
+    runs-on: ubuntu-latest
+    env:
+      BRANCH: $(date +"%F")
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Checkout Omnis
+        uses: actions/checkout@v6
+      - name: Checkout Endless Sky
+        uses: actions/checkout@v6
+        with:
+          path: endless-sky
+          repo: endless-sky/endless-sky
+      - name: Move folders
+        run: |
+          mv endless-sky/data ./es-data
+          rm -rf endless-sky
+      - name: Run scripts
+        run: python3 .github/workflows/update.py
+        run: python3 .github/workflows/variants.py
+      - name: Add generated files
+        run: |
+          echo $BRANCH
+          git config user.name "github-actions[bot]"
+          git config user.email "actions@github.com"
+          git add "data/salesoutfit.txt"
+          git add "data/salesship.txt"
+          git add "data/salesvariant.txt"
+          git diff-index --quiet HEAD || git commit -m "Updated sales"
+      - name: Push files and create a pull request
+        run: |
+          git push origin $BRANCH
+          gh pr create --base main --body "Auto-generated update pull request." --head $BRANCH -t "Update"
+          
+#--repo EndlessSkyCommunity/-Omnis
