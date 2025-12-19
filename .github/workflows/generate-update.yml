@@ -27,8 +27,9 @@ jobs:
           mv endless-sky/data ./es-data
           rm -rf endless-sky
       - name: Run scripts
-        run: python3 .github/workflows/update.py
-        run: python3 .github/workflows/variants.py
+        run: |
+          python3 .github/workflows/update.py
+          python3 .github/workflows/variants.py
       - name: Add generated files
         run: |
           echo $BRANCH
