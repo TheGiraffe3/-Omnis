@@ -68,9 +68,9 @@ def filter_objs(obj_paths, obj_names, ignore_variants):
 	for obj_name in obj_names:
 		index = obj_names.index(obj_name)
 		path = obj_paths[index].split(os.sep)[1]
-        path.replace('.txt', '')
-        path.replace('persons', 'developer')
-        path.replace('_deprecated', 'deprecated')
+		path.replace('.txt', '')
+		path.replace('persons', 'developer')
+		path.replace('_deprecated', 'deprecated')
 		if obj_name.startswith('ship '):
 			if ignore_variants == False:
 				ships.append(obj_name.strip())
@@ -129,9 +129,9 @@ def create_outfitter(outfits, outfits_path):
 def write_files(shipyards_file, shipyards_text, outfitter_file, outfitter_text):
 	# write text files
     with open(shipyards_file, 'w') as target:
-        target.writelines(shipyards_text)
+		target.writelines(shipyards_text)
     with open(outfitter_file, 'w') as target:
-        target.writelines(outfitter_text)
+		target.writelines(outfitter_text)
 		
 
 if __name__ == "__main__":
