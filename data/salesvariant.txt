@@ -1,0 +1,6 @@
+shipyard "ship.txt"
+  ship "Caster"
+  ship "dummy"
+  ship Kestrel "Kestrel (MZ)"
+  ship Vanguard "Vanguard (Pointedstick)"
+
