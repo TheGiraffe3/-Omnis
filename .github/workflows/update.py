@@ -135,7 +135,7 @@ def write_files(shipyards_file, shipyards_text, outfitter_file, outfitter_text):
 		
 
 if __name__ == "__main__":
-	data_folder = 'es-data'
+	data_folder = 'es-data/'
 	outfitter_file = 'data/salesoutfit.txt'
 	shipyards_file = 'data/salesship.txt'
 	ignore_variants = False # set to True or False
