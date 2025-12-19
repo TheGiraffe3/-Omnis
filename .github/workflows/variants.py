@@ -128,9 +128,9 @@ def create_outfitter(outfits, outfits_path):
 
 def write_files(shipyards_file, shipyards_text, outfitter_file, outfitter_text):
 	# write text files
-    with open(shipyards_file, 'w') as target:
+	with open(shipyards_file, 'w') as target:
 		target.writelines(shipyards_text)
-    with open(outfitter_file, 'w') as target:
+	with open(outfitter_file, 'w') as target:
 		target.writelines(outfitter_text)
 		
 
