@@ -12,7 +12,6 @@ jobs:
     name: Update Plugin
     runs-on: ubuntu-latest
     env:
-      BRANCH: $(date +"%F")
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Checkout Omnis
@@ -30,6 +29,9 @@ jobs:
         run: |
           python3 .github/workflows/update.py
           python3 .github/workflows/variants.py
+      - name: Get branch name
+        run: |
+          echo "BRANCH=$(date +'%Y%m%d')" >> $GITHUB_ENV
       - name: Add generated files
         run: |
           echo $BRANCH
