@@ -25,13 +25,14 @@ jobs:
         run: |
           mv endless-sky/data ./es-data
           rm -rf endless-sky
+          ls
       - name: Run scripts
         run: |
           python3 .github/workflows/update.py
           python3 .github/workflows/variants.py
       - name: Get branch name
         run: |
-          echo "BRANCH=$(date +'%Y%m%d')" >> $GITHUB_ENV
+          echo "BRANCH=auto-generated-pr-$(date +'%Y%m%d')" >> $GITHUB_ENV
       - name: Add generated files
         run: |
           echo $BRANCH
@@ -46,6 +47,6 @@ jobs:
       - name: Push files and create a pull request
         run: |
           git push --set-upstream origin HEAD:$BRANCH
-          gh pr create --base main --body "Auto-generated update pull request." --head $BRANCH -t "Update"
+#          gh pr create --base main --body "Auto-generated update pull request." --head $BRANCH -t "Update"
           
 #--repo EndlessSkyCommunity/-Omnis
