@@ -138,7 +138,7 @@ if __name__ == "__main__":
 	data_folder = 'es-data/'
 	outfitter_file = 'data/salesoutfit.txt'
 	shipyards_file = 'data/salesship.txt'
-	ignore_variants = False # set to True or False
+	ignore_variants = True # set to True or False
 	objs, obj_paths, obj_names = read_everything(data_folder)
 	ships, ships_path, outfits, outfits_path = filter_objs(obj_paths, obj_names, ignore_variants)
 	shipyards_text = create_shipyards(ships, ships_path)

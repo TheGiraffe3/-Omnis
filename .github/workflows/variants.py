@@ -112,7 +112,7 @@ def write_files(shipyards_file, shipyards_text):
 if __name__ == "__main__":
 	data_folder = 'es-data/'
 	shipyards_file = 'data/salesvariant.txt'
-	ignore_variants = True # set to True or False
+	ignore_variants = False # set to True or False
 	objs, obj_paths, obj_names = read_everything(data_folder)
 	ships, ships_path = filter_objs(obj_paths, obj_names, ignore_variants)
 	shipyards_text = create_shipyards(ships, ships_path)
