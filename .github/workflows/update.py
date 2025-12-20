@@ -78,7 +78,7 @@ def filter_objs(obj_paths, obj_names, ignore_variants):
 			else:
 				check = check_variants(obj_name.strip())
 				if check == False:
-					ships.append(obj_name.strip())
+					ships.append(obj_name.strip().replace('ship ', ''))
 					ships_path.append(path)
 		elif obj_name.startswith('outfit '):
 			outfits.append(obj_name.strip().replace('ship ', ''))
