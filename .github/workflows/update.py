@@ -68,12 +68,12 @@ def filter_objs(obj_paths, obj_names, ignore_variants):
 	for obj_name in obj_names:
 		index = obj_names.index(obj_name)
 		path = obj_paths[index].split(os.sep)[1]
-		path.replace('.txt', '')
-		path.replace('persons', 'developer')
-		path.replace('_deprecated', 'deprecated')
+		path = path.replace('.txt', '')
+		path = path.replace('persons', 'developer')
+		path = path.replace('_deprecated', 'deprecated')
 		if obj_name.startswith('ship '):
 			if ignore_variants == False:
-				ships.append(obj_name.strip())
+				ships.append(obj_name.strip().replace('ship ', ''))
 				ships_path.append(path)
 			else:
 				check = check_variants(obj_name.strip())
@@ -81,7 +81,7 @@ def filter_objs(obj_paths, obj_names, ignore_variants):
 					ships.append(obj_name.strip())
 					ships_path.append(path)
 		elif obj_name.startswith('outfit '):
-			outfits.append(obj_name.strip())
+			outfits.append(obj_name.strip().replace('ship ', ''))
 			outfits_path.append(path)
 	print('     ' + str(len(ships)) + ' ships found')
 	print('     ' + str(len(outfits)) + ' outfits found')
@@ -144,4 +144,3 @@ if __name__ == "__main__":
 	shipyards_text = create_shipyards(ships, ships_path)
 	outfitter_text = create_outfitter(outfits, outfits_path)
 	write_files(shipyards_file, shipyards_text, outfitter_file, outfitter_text)
-	

@@ -32,7 +32,7 @@ jobs:
           python3 .github/workflows/variants.py
       - name: Get branch name
         run: |
-          echo "BRANCH=auto-generated-pr-$(date +'%Y%m%d')" >> $GITHUB_ENV
+          echo "BRANCH=auto-generated-pr-20251219" >> $GITHUB_ENV
       - name: Add generated files
         run: |
           echo $BRANCH
