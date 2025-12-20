@@ -1,4 +1,5 @@
 import os
+import re
 
 def read_everything(data_folder):
 	print('\nreading data folder')
@@ -53,68 +54,27 @@ def read_everything(data_folder):
 	print('	\n	DONE')
 	return objs, obj_paths, obj_names
 
-
-def filter_objs(obj_paths, obj_names, ignore_variants):
-	# variants check def, return True for variant, and False for ship
-	def check_variants(nodename):
-		if nodename.count('"') == 2:
-			check = False
-		else:
-			check = True
-		return check
-	# filter all ships out of all nodes and save them with their paths
-	print('filtering objects')
-	ships, ships_path = [], []
-	for obj_name in obj_names:
-		index = obj_names.index(obj_name)
-		path = obj_paths[index].split(os.sep)[1]
-		path.replace('.txt', '')
-		path.replace('persons', 'developer')
-		path.replace('_deprecated', 'deprecated')
-		if obj_name.startswith('ship '):
-			if ignore_variants == False:
-				ships.append(obj_name.strip())
-				ships_path.append(path)
-			else:
-				check = check_variants(obj_name.strip())
-				if check == False:
-					ships.append(obj_name.strip())
-					ships_path.append(path)
-	print('     ' + str(len(ships)) + ' ships found')
-	return ships, ships_path
-
-
-def create_shipyards(ships, ships_path):
-	# create a text containing all shipyards and the matching ships
-	listed_paths = []
-	shipyards_text = ''
-	for path in ships_path:
-		if not path in listed_paths:
-			listed_paths.append(path)
-	print('     different shipyards found: ' + str(len(listed_paths)))
-	#print(listed_paths)
-	for shipyard in listed_paths:
-		shipyards_text += 'shipyard "' + shipyard + '"\n'
-		for ship in ships:
-			index = ships.index(ship)
-			if ships_path[index] == shipyard:
-				shipyards_text += '  ' + ship + '\n'
-		shipyards_text += '\n'
-	return shipyards_text
-
-
-def write_files(shipyards_file, shipyards_text):
-	# write text files
-	with open(shipyards_file, 'w') as target:
-		target.writelines(shipyards_text)		
-
+def show_variants(objs):
+	ships = []
+	for obj in objs:
+		if obj.startswith('ship '): # get all ships
+			line = obj[:obj.find('\n')] # get just the first line i.e. ship "scrapper" "scrapper (gatling)"
+			if '"' in line:
+				pos1 = line.find('"')
+				pos2 = line.find('"', pos1 +1)
+				if obj[pos2 + 1] != '\n': # if a linebreak comes after the "scrapper"
+					line = line.replace('ship ', '') # remove the 'ship ' before the name
+					pos1 = line.find('"')
+					pos2 = line.find('"', pos1 + 1)
+					line = line[pos2 + 1:].strip() # only get the second token
+					ships.append('\t' + line)
+	with open('data/salesvariants.txt', 'w') as target: # write to file
+		for line in ships:
+			target.writelines(line + '\n')
+	print(str(len(ships)) + ' variants found')
+	print('variants.txt written to: ' + os.getcwd())
 
 if __name__ == "__main__":
-	data_folder = 'es-data/'
-	shipyards_file = 'data/salesvariant.txt'
-	ignore_variants = False # set to True or False
+	data_folder = "es-data/"
 	objs, obj_paths, obj_names = read_everything(data_folder)
-	ships, ships_path = filter_objs(obj_paths, obj_names, ignore_variants)
-	shipyards_text = create_shipyards(ships, ships_path)
-	write_files(shipyards_file, shipyards_text)
-	
+	show_variants(objs)
