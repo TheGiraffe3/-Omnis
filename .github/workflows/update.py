@@ -81,7 +81,7 @@ def filter_objs(obj_paths, obj_names, ignore_variants):
 					ships.append(obj_name.strip().replace('ship ', ''))
 					ships_path.append(path)
 		elif obj_name.startswith('outfit '):
-			outfits.append(obj_name.strip().replace('ship ', ''))
+			outfits.append(obj_name.strip().replace('outfit ', ''))
 			outfits_path.append(path)
 	print('     ' + str(len(ships)) + ' ships found')
 	print('     ' + str(len(outfits)) + ' outfits found')
