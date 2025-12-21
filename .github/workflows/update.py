@@ -131,9 +131,9 @@ def create_outfitter(outfits, outfits_path):
 
 def write_files(sales_file, shipyards_text, outfitter_text, variants_text):
 	# write text files
+	merged_file = shipyards_text + '\n\n' + variants_text + '\n\n' + outfitter_text
 	with open(sales_file, 'w') as target:
-		target.writelines(shipyards_text, '\n\n', variants_text, '\n\n', outfitter_text)
-		
+		target.writelines(merged_file)
 
 if __name__ == "__main__":
 	data_folder = 'es-data/'
