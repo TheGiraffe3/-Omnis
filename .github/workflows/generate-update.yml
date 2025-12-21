@@ -39,7 +39,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "actions@github.com"
           git status
-          git add "data/sales.txt"
+          git add "data/salesnew.txt"
           git add "data/salesvariant.txt"
           git status
           git diff-index --quiet HEAD || git commit -m "Updated sales"
