@@ -135,6 +135,7 @@ def write_files(sales_file, shipyards_text, outfitter_text, variants_text):
 	with open(sales_file, 'w') as target:
 		target.writelines(merged_file)
 
+
 if __name__ == "__main__":
 	data_folder = 'es-data/'
 	sales_file = 'data/sales.txt'
