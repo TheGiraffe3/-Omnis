@@ -138,7 +138,7 @@ def write_files(sales_file, shipyards_text, outfitter_text, variants_text):
 
 if __name__ == "__main__":
 	data_folder = 'es-data/'
-	sales_file = 'data/sales.txt'
+	sales_file = 'data/salesnew.txt'
 	ignore_variants = True # set to True or False
 	objs, obj_paths, obj_names = read_everything(data_folder)
 	ships, ships_path, outfits, outfits_path, variants_text = filter_objs(obj_paths, obj_names, ignore_variants)
