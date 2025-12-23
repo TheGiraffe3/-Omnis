@@ -54,7 +54,7 @@ def read_everything(data_folder):
 	return objs, obj_paths, obj_names
 
 
-def filter_objs(obj_paths, obj_names, ignore_variants):
+def filter_objs(obj_paths, obj_names, objs):
 	# variants check def, return True for variant, and False for ship
 	variants_text = 'shipyard "variants"\n'
 	def check_variants(nodename):
@@ -65,7 +65,7 @@ def filter_objs(obj_paths, obj_names, ignore_variants):
 		return check
 	# filter all outfits and ships out of all nodes and save them with their paths
 	print('filtering objects')
-	ships, ships_path, outfits, outfits_path = [], [], [], []
+	ships, ships_path, outfits, outfits_path, variants, variants_path, variantsall, variantsall_path = [], [], [], [], [], [], [], []
 	for obj_name in obj_names:
 		index = obj_names.index(obj_name)
 		path = obj_paths[index].split(os.sep)[1]
@@ -73,28 +73,29 @@ def filter_objs(obj_paths, obj_names, ignore_variants):
 		path = path.replace('persons', 'developer')
 		path = path.replace('_deprecated', 'deprecated')
 		if obj_name.startswith('ship '):
-			if ignore_variants == False:
+			check = check_variants(obj_name.strip())
+			if check == False:
 				ships.append(obj_name.strip().replace('ship ', ''))
 				ships_path.append(path)
 			else:
-				check = check_variants(obj_name.strip())
-				if check == False:
-					ships.append(obj_name.strip().replace('ship ', ''))
-					ships_path.append(path)
+				if 'add attributes' in objs[index]:
+					variants.append(obj_name.strip().replace('ship ', ''))
+					variants_path.append(path)
 				else:
-					variants_text += '\t' obj_name.strip().replace('ship ', '') + '\n'
+					variantsall.append(obj_name.strip().replace('ship ', ''))
+					variantsall_path.append(path)
 		elif obj_name.startswith('outfit '):
 			outfits.append(obj_name.strip().replace('outfit ', ''))
 			outfits_path.append(path)
 	print('		' + str(len(ships)) + ' ships found')
 	print('		' + str(len(outfits)) + ' outfits found')
-	return ships, ships_path, outfits, outfits_path, variants_text
+	return ships, ships_path, outfits, outfits_path, variants, variants_path, variantsall, variantsall_path
 
 
-def create_shipyards(ships, ships_path):
+def create_shipyards(ships, ships_path, variants, variants_path, variantsall, variantsall_path):
 	# create a text containing all shipyards and the matching ships
 	listed_paths = []
-	shipyards_text = ''
+	shipyards_text, variants_text, variantsall_text = '', '', ''
 	for path in ships_path:
 		if not path in listed_paths:
 			listed_paths.append(path)
@@ -102,12 +103,24 @@ def create_shipyards(ships, ships_path):
 	#print(listed_paths)
 	for shipyard in listed_paths:
 		shipyards_text += 'shipyard "' + shipyard + '"\n'
+		variants_text += 'shipyard "' + shipyard + 'Variants"\n'
+		variantsall_text  += 'shipyard "' + shipyard + 'variantsAll"\n'
 		for ship in ships:
 			index = ships.index(ship)
 			if ships_path[index] == shipyard:
 				shipyards_text += '	' + ship + '\n'
 		shipyards_text += '\n'
-	return shipyards_text
+		for variant in variants:
+			index = variants.index(variant)
+			if variants_path[index] == shipyard:
+				variants_text += '	' + variant + '\n'
+		variants_text += '\n'
+		for variantall in variantsall:
+			index = variantsall.index(variantall)
+			if variantsall_path[index] == shipyard:
+				variantsall_text += '	' + variantall + '\n'
+		variantsall_text += '\n'
+	return shipyards_text, variants_text, variantsall_text
 
 
 def create_outfitter(outfits, outfits_path):
@@ -129,9 +142,9 @@ def create_outfitter(outfits, outfits_path):
 	return outfitter_text
 
 
-def write_files(sales_file, shipyards_text, outfitter_text, variants_text):
+def write_files(sales_file, shipyards_text, outfitter_text, variants_text, variantsall_text):
 	# write text files
-	merged_file = shipyards_text + '\n\n' + variants_text + '\n\n' + outfitter_text
+	merged_file = shipyards_text + '\n\n' + variants_text + '\n\n' + variantsall_text + outfitter_text
 	with open(sales_file, 'w') as target:
 		target.writelines(merged_file)
 
@@ -139,9 +152,8 @@ def write_files(sales_file, shipyards_text, outfitter_text, variants_text):
 if __name__ == "__main__":
 	data_folder = 'es-data/'
 	sales_file = 'data/salesnew.txt'
-	ignore_variants = True # set to True or False
 	objs, obj_paths, obj_names = read_everything(data_folder)
-	ships, ships_path, outfits, outfits_path, variants_text = filter_objs(obj_paths, obj_names, ignore_variants)
-	shipyards_text = create_shipyards(ships, ships_path)
+	ships, ships_path, outfits, outfits_path, variants, variants_path, variantsall, variantsall_path = filter_objs(obj_paths, obj_names, objs)
+	shipyards_text, variants_text, variantsall_text = create_shipyards(ships, ships_path, variants, variants_path, variantsall, variantsall_path)
 	outfitter_text = create_outfitter(outfits, outfits_path)
-	write_files(sales_file, shipyards_text, outfitter_text, variants_text)
+	write_files(sales_file, shipyards_text, outfitter_text, variants_text, variantsall_text)
