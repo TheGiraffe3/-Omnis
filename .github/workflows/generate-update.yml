@@ -29,7 +29,6 @@ jobs:
       - name: Run scripts
         run: |
           python3 .github/workflows/update.py
-          python3 .github/workflows/variants.py
       - name: Get branch name
         run: |
           echo "BRANCH=auto-generated-pr-20251219" >> $GITHUB_ENV
