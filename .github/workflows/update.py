@@ -104,7 +104,7 @@ def create_shipyards(ships, ships_path, variants, variants_path, variantsall, va
 	for shipyard in listed_paths:
 		shipyards_text += 'shipyard "' + shipyard + '"\n'
 		variants_text += 'shipyard "' + shipyard + 'Variants"\n'
-		variantsall_text  += 'shipyard "' + shipyard + 'variantsAll"\n'
+		variantsall_text  += 'shipyard "' + shipyard + 'VariantsAll"\n'
 		for ship in ships:
 			index = ships.index(ship)
 			if ships_path[index] == shipyard:
