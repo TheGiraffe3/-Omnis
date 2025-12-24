@@ -81,6 +81,7 @@ def filter_objs(obj_paths, obj_names, objs, ships_exclude, outfits_exclude):
 				else:
 					line = obj_name
 					if '"' in line:
+						obj = objs[index]
 						pos1 = line.find('"')
 						pos2 = line.find('"', pos1 +1)
 						if obj[pos2 + 1] != '\n': # if a linebreak comes after the "scrapper"
