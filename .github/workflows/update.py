@@ -73,20 +73,29 @@ def filter_objs(obj_paths, obj_names, objs, ships_exclude, outfits_exclude):
 		path = path.replace('persons', 'developer')
 		path = path.replace('_deprecated', 'deprecated')
 		if obj_name.startswith('ship '):
-			if not objs[index] in ships_exclude:
+			if not obj_name.strip().replace('ship', '').replace('"', '') in ships_exclude:
 				check = check_variants(obj_name.strip())
 				if check == False:
 					ships.append(obj_name.strip().replace('ship ', ''))
 					ships_path.append(path)
 				else:
+					line = obj_name
+					if '"' in line:
+						pos1 = line.find('"')
+						pos2 = line.find('"', pos1 +1)
+						if obj[pos2 + 1] != '\n': # if a linebreak comes after the "scrapper"
+							line = line.replace('ship ', '') # remove the 'ship ' before the name
+							pos1 = line.find('"')
+							pos2 = line.find('"', pos1 + 1)
+							name = line[pos2 + 1:].strip() # only get the second token
 					if 'add attributes' in objs[index]:
-						variants.append(obj_name.strip().replace('ship ', ''))
+						variants.append(name)
 						variants_path.append(path)
 					else:
-						variantsall.append(obj_name.strip().replace('ship ', ''))
+						variantsall.append(name)
 						variantsall_path.append(path)
 		elif obj_name.startswith('outfit '):
-			if not objs[index] in outfits_exclude:
+			if not obj_name.strip().replace('outfit', '').replace('"', '') in outfits_exclude:
 				outfits.append(obj_name.strip().replace('outfit ', ''))
 				outfits_path.append(path)
 	print('		' + str(len(ships)) + ' ships found')
@@ -155,7 +164,7 @@ if __name__ == "__main__":
 	data_folder = 'es-data/'
 	sales_file = 'data/salesnew.txt'
 	ships_exclude = ['Cloak Check', 'Asteroid Planet', 'Asteroid Blocker', '_Ion Timer Ship', 'Rescue Dummy', 'Timer Ship']
-	outfits_exclude = ['Orchid Active', 'Orchid Boost', 'Orchid Coast', 'Orchid Divert', 'Orchid Terminal', 'Orchid Boost Stage Expended', 'Orchid Divert Stage Expended', 'Ophrys Terminal', 'ion hail', 'rslug', 'Blaster Submunition', 'Modified Blaster Submunition', 'gbullet', 'Suicide Gun', '_Ion Storm Timer: Generator', 'Timer Weapon', 'Timer Submunition', 'Shard inactive']
+	outfits_exclude = ['Orchid Active', 'Orchid Boost', 'Orchid Coast', 'Orchid Divert', 'Orchid Terminal', 'Orchid Boost Stage Expended', 'Orchid Divert Stage Expended', 'Ophrys Terminal', 'ion hail', 'rslug', 'Blaster Submunition', 'Modified Blaster Submunition', 'gbullet', 'Suicide Gun', '_Ion Storm Timer: Generator', 'Timer Weapon', 'Timer Submunition', 'Shard inactive', 'static', 'print']
 	objs, obj_paths, obj_names = read_everything(data_folder)
 	ships, ships_path, outfits, outfits_path, variants, variants_path, variantsall, variantsall_path = filter_objs(obj_paths, obj_names, objs, ships_exclude, outfits_exclude)
 	shipyards_text, variants_text, variantsall_text = create_shipyards(ships, ships_path, variants, variants_path, variantsall, variantsall_path)
