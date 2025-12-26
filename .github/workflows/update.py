@@ -163,9 +163,9 @@ def write_files(sales_file, shipyards_text, outfitter_text, variants_text, varia
 
 if __name__ == "__main__":
 	data_folder = 'es-data/'
-	sales_file = 'data/salesnew.txt'
+	sales_file = 'data/sales.txt'
 	ships_exclude = ['Cloak Check', 'Asteroid Planet', 'Asteroid Blocker', '_Ion Timer Ship', 'Rescue Dummy', 'Timer Ship']
-	outfits_exclude = ['Orchid Active', 'Orchid Boost', 'Orchid Coast', 'Orchid Divert', 'Orchid Terminal', 'Orchid Boost Stage Expended', 'Orchid Divert Stage Expended', 'Ophrys Terminal', 'ion hail', 'rslug', 'Blaster Submunition', 'Modified Blaster Submunition', 'gbullet', 'Suicide Gun', '_Ion Storm Timer: Generator', 'Timer Weapon', 'Timer Submunition', 'Shard inactive', 'static', 'print', 'asteroid fragment', 'magic deployer', 'asteroid missile', 'asteroid launch', 'ribault guided', 'ribault unguided']
+	outfits_exclude = ['Orchid Active', 'Orchid Boost', 'Orchid Coast', 'Orchid Divert', 'Orchid Terminal', 'Orchid Boost Stage Expended', 'Orchid Divert Stage Expended', 'Ophrys Terminal', 'ion hail', 'rslug', 'Blaster Submunition', 'Modified Blaster Submunition', 'gbullet', 'Suicide Gun', '_Ion Storm Timer: Generator', 'Timer Weapon', 'Timer Submunition', 'Shard inactive', 'static', 'print', 'asteroid fragment', 'magic deployer', 'asteroid missile', 'asteroid launch', 'ribault guided', 'ribault unguided', 'plasma particle', 'asteroid laser']
 	objs, obj_paths, obj_names = read_everything(data_folder)
 	ships, ships_path, outfits, outfits_path, variants, variants_path, variantsall, variantsall_path = filter_objs(obj_paths, obj_names, objs, ships_exclude, outfits_exclude)
 	shipyards_text, variants_text, variantsall_text = create_shipyards(ships, ships_path, variants, variants_path, variantsall, variantsall_path)
