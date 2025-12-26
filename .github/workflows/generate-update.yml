@@ -36,7 +36,7 @@ jobs:
           echo $BRANCH
           git config user.name "github-actions[bot]"
           git config user.email "actions@github.com"
-          git add "data/salesnew.txt"
+          git add "data/sales.txt"
           git status
           git diff-index --quiet HEAD || git commit -m "Updated sales"
           echo "COMMIT_SHA=$(git rev-parse HEAD)" >> $GITHUB_ENV
