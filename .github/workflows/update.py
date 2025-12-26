@@ -73,7 +73,7 @@ def filter_objs(obj_paths, obj_names, objs, ships_exclude, outfits_exclude):
 		path = path.replace('persons', 'developer')
 		path = path.replace('_deprecated', 'deprecated')
 		if obj_name.startswith('ship '):
-			if not obj_name.strip().replace('ship', '') in ships_exclude:
+			if not obj_name.strip().replace('ship ', '') in ships_exclude:
 				check = check_variants(obj_name.strip())
 				if check == False:
 					ships.append(obj_name.strip().replace('ship ', ''))
@@ -96,7 +96,7 @@ def filter_objs(obj_paths, obj_names, objs, ships_exclude, outfits_exclude):
 						variantsall.append(name)
 						variantsall_path.append(path)
 		elif obj_name.startswith('outfit '):
-			if not obj_name.strip().replace('outfit', '') in outfits_exclude:
+			if not obj_name.strip().replace('outfit ', '') in outfits_exclude:
 				outfits.append(obj_name.strip().replace('outfit ', ''))
 				outfits_path.append(path)
 	print('		' + str(len(ships)) + ' ships found')
