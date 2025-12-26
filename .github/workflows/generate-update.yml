@@ -2,9 +2,8 @@ name: Generate Data
 
 on:
   push:
-#  schedule:
-#    - cron: '0 * * * *' # for testing, every hour
-#    - cron: '* 0 * * 1' # every Sunday
+  schedule:
+    - cron: '0 0 1 * *' # the first day of every month
   workflow_dispatch:
 
 jobs:
@@ -31,19 +30,22 @@ jobs:
           python3 .github/workflows/update.py
       - name: Get branch name
         run: |
-          echo "BRANCH=auto-generated-pr-20251219" >> $GITHUB_ENV
+          echo "BRANCH=auto-generated-pr-$(date +'%Y%m%d')" >> $GITHUB_ENV
       - name: Add generated files
         run: |
           echo $BRANCH
           git config user.name "github-actions[bot]"
           git config user.email "actions@github.com"
-          git status
           git add "data/salesnew.txt"
           git status
           git diff-index --quiet HEAD || git commit -m "Updated sales"
+          echo "COMMIT_SHA=$(git rev-parse HEAD)" >> $GITHUB_ENV
+          git checkout -b temp_branch
+          git status
+          git cherry-pick $COMMIT_SHA
       - name: Push files and create a pull request
         run: |
           git push -f --set-upstream origin HEAD:$BRANCH
-          gh pr create --base main --body "Auto-generated update pull request." --head $BRANCH -t "Update"
+          gh pr create --base main --body "Auto-generated sales update for the month of $(date +%B)." --head $BRANCH -t "Sales Update"
           
 #--repo EndlessSkyCommunity/-Omnis
