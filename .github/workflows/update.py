@@ -96,7 +96,7 @@ def filter_objs(obj_paths, obj_names, objs, ships_exclude, outfits_exclude):
 						variantsall.append(name)
 						variantsall_path.append(path)
 		elif obj_name.startswith('outfit '):
-			if not any(obj_name.strip().replace('outfit ', '').replace('"', '') in outfits_exclude):
+			if not any(excluded_part in obj_name.strip().replace('outfit ', '').replace('"', '') for excluded_part in outfits_exclude):
 				outfits.append(obj_name.strip().replace('outfit ', ''))
 				outfits_path.append(path)
 	print('		' + str(len(ships)) + ' ships found')
