@@ -40,6 +40,8 @@ jobs:
           git status
           git diff-index --quiet HEAD || git commit -m "Updated sales"
           echo "COMMIT_SHA=$(git rev-parse HEAD)" >> $GITHUB_ENV
+          echo "COMMIT_SHA: $COMMIT_SHA"
+          echo "git rev-parse HEAD: $(git rev-parse HEAD)"
           git checkout -b temp_branch
           git status
           git cherry-pick $COMMIT_SHA
