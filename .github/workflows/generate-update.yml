@@ -44,7 +44,7 @@ jobs:
       - name: Echo SHA, checkout a new branch, and cherry-pick
         run: |
           echo "COMMIT_SHA: $COMMIT_SHA"
-          git checkout main
+          git checkout refs/remotes/origin/main
           git checkout -b temp_branch
           git cherry-pick $COMMIT_SHA
       - name: Push files and create a pull request
