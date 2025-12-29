@@ -38,8 +38,12 @@ jobs:
           git config user.email "actions@github.com"
           git add "data/sales.txt"
           git diff-index --quiet HEAD || git commit -m "Updated sales"
+      - name: Get commit SHA
+        run: |
           echo "COMMIT_SHA=$(git rev-parse HEAD)" >> $GITHUB_ENV
           echo "COMMIT_SHA: $COMMIT_SHA"
+      - name: Checkout a new branch and cherry-pick
+        run: |
           git checkout -b temp_branch
           git status
           git cherry-pick $COMMIT_SHA
