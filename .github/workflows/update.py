@@ -117,20 +117,32 @@ def create_shipyards(ships, ships_path, variants, variants_path, variantsall, va
 		shipyards_text += 'shipyard "' + shipyard + '"\n'
 		variants_text += 'shipyard "' + shipyard + 'Variants"\n'
 		variantsall_text  += 'shipyard "' + shipyard + 'VariantsAll"\n'
+		has_no_content = True
 		for ship in ships:
 			index = ships.index(ship)
 			if ships_path[index] == shipyard:
 				shipyards_text += '	' + ship + '\n'
+				has_no_content = False
+		if has_no_content == True:
+			shipyards_text += '	"dummy"\n'
 		shipyards_text += '\n'
+		has_no_content = True
 		for variant in variants:
 			index = variants.index(variant)
 			if variants_path[index] == shipyard:
-				variants_text += '	' + variant + '\n'
+				shipyards_text += '	' + variant + '\n'
+				has_no_content = False
+		if has_no_content == True:
+			variants_text += '	"dummy"\n'
 		variants_text += '\n'
+		has_no_content = True
 		for variantall in variantsall:
 			index = variantsall.index(variantall)
 			if variantsall_path[index] == shipyard:
 				variantsall_text += '	' + variantall + '\n'
+				has_no_content = False
+		if has_no_content == True
+			variantsall_text += '	"dummy"\n'
 		variantsall_text += '\n'
 	return shipyards_text, variants_text, variantsall_text
 
@@ -143,13 +155,16 @@ def create_outfitter(outfits, outfits_path):
 		if not path in listed_paths:
 			listed_paths.append(path)
 	print('		different outfitters found: ' + str(len(listed_paths)))
-	#print(listed_paths)
+	has_no_content = True
 	for outfitter in listed_paths:
 		outfitter_text += 'outfitter "' + outfitter + '"\n'
 		for outfit in outfits:
 			index = outfits.index(outfit)
 			if outfits_path[index] == outfitter:
 				outfitter_text += '	' + outfit + '\n'
+				has_no_content = False
+		if has_no_content == True
+			outfitter_text += '	"dummy"\n'
 		outfitter_text += '\n'
 	return outfitter_text
 
