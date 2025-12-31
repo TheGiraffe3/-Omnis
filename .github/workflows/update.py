@@ -141,7 +141,7 @@ def create_shipyards(ships, ships_path, variants, variants_path, variantsall, va
 			if variantsall_path[index] == shipyard:
 				variantsall_text += '	' + variantall + '\n'
 				has_no_content = False
-		if has_no_content == True
+		if has_no_content == True:
 			variantsall_text += '	"dummy"\n'
 		variantsall_text += '\n'
 	return shipyards_text, variants_text, variantsall_text
@@ -163,7 +163,7 @@ def create_outfitter(outfits, outfits_path):
 			if outfits_path[index] == outfitter:
 				outfitter_text += '	' + outfit + '\n'
 				has_no_content = False
-		if has_no_content == True
+		if has_no_content == True:
 			outfitter_text += '	"dummy"\n'
 		outfitter_text += '\n'
 	return outfitter_text
