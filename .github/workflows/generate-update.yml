@@ -1,7 +1,6 @@
 name: Generate Data
 
 on:
-  push:
   schedule:
     - cron: '0 0 1 * *' # the first day of every month
   workflow_dispatch:
@@ -51,6 +50,4 @@ jobs:
       - name: Push files and create a pull request
         run: |
           git push -f --set-upstream origin HEAD:$BRANCH
-          gh pr create --base main --body "Auto-generated sales update." --head $BRANCH -t "Sales Update"
-          
-#--repo EndlessSkyCommunity/-Omnis
+          gh pr create --base main --body "Auto-generated sales update." --head $BRANCH -t "Sales Update" --repo EndlessSkyCommunity/-Omnis
