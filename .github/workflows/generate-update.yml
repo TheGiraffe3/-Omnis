@@ -54,4 +54,4 @@ jobs:
       - name: Push files and create a pull request
         run: |
           git push -f --set-upstream origin HEAD:$BRANCH
-          gh pr create --base main --body "Auto-generated sales update." --head $BRANCH -t "Sales Update" --repo EndlessSkyCommunity/-Omnis
+          gh pr create --base main --body "Auto-generated sales update." --head ${{ github.repository_owner }}:$BRANCH -t "Sales Update" --repo EndlessSkyCommunity/-Omnis
