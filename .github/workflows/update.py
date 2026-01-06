@@ -130,7 +130,7 @@ def create_shipyards(ships, ships_path, variants, variants_path, variantsall, va
 		for variant in variants:
 			index = variants.index(variant)
 			if variants_path[index] == shipyard:
-				shipyards_text += '	' + variant + '\n'
+				variants_text += '	' + variant + '\n'
 				has_no_content = False
 		if has_no_content == True:
 			variants_text += '	"dummy"\n'
