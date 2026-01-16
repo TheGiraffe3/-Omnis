@@ -113,8 +113,17 @@ def create_shipyards(ships, ships_path, variants, variants_path, variantsall, va
 			listed_paths.append(path)
 	print('		different shipyards found: ' + str(len(listed_paths)))
 	#print(listed_paths)
+	shipyards_text += 'shipyard "omnis"\n'
+	shipyards_text += '	"Caster A"\n'
+	shipyards_text += '	"Caster B"\n'
+	shipyards_text += '	"Caster C"\n\n'
 	for shipyard in listed_paths:
 		shipyards_text += 'shipyard "' + shipyard + '"\n'
+		if shipyard == "developer":
+			shipyards_text += '	"Kestrel (MZ)"\n'
+			shipyards_text += '	"Finch (MZ)"\n'
+			shipyards_text += '	"Vanguard (Pointedstick)"\n'
+			shipyards_text += '	"Subsidurial"\n'
 		variants_text += 'shipyard "' + shipyard + 'Variants"\n'
 		variantsall_text  += 'shipyard "' + shipyard + 'VariantsAll"\n'
 		has_no_content = True
