@@ -164,6 +164,26 @@ def create_outfitter(outfits, outfits_path):
 		if not path in listed_paths:
 			listed_paths.append(path)
 	print('		different outfitters found: ' + str(len(listed_paths)))
+	outfitter_text += 'outfitter "omnis"\n'
+	outfitter_text += '	"   Omnipotence"\n'
+	outfitter_text += '	"   Omnipresence"\n'
+	outfitter_text += '	"   Omniscience"\n'
+	outfitter_text += '	"  Disable"\n'
+	outfitter_text += '	"  Kill"\n'
+	outfitter_text += '	" Crux Stone "\n'
+	outfitter_text += '	"Carry All"\n'
+	outfitter_text += '	"Drag Addition"\n'
+	outfitter_text += '	"Drag Reduction"\n'
+	outfitter_text += '	"Extra Engine"\n'
+	outfitter_text += '	"Extra Outfit"\n'
+	outfitter_text += '	"Extra Weapon"\n'
+	outfitter_text += '	"Fuel Capacity Addition"\n'
+	outfitter_text += '	"Fuel Capacity Reduction"\n'
+	outfitter_text += '	"Heat Dissipation Addition"\n'
+	outfitter_text += '	"Heat Dissipation Reduction"\n'
+	outfitter_text += '	"Mass Addition"\n'
+	outfitter_text += '	"Mass Reduction"\n'
+	outfitter_text += '	"Spinal Mount Addition"\n\n'
 	has_no_content = True
 	for outfitter in listed_paths:
 		outfitter_text += 'outfitter "' + outfitter + '"\n'
