@@ -107,7 +107,7 @@ def filter_objs(obj_paths, obj_names, objs, ships_exclude, outfits_exclude):
 def create_shipyards(ships, ships_path, variants, variants_path, variantsall, variantsall_path):
 	# create a text containing all shipyards and the matching ships
 	listed_paths = []
-	shipyards_text, variants_text, variantsall_text = '', '', ''
+	shipyards_text, variants_text, variantsall_text, arena_text = '', '', '', ''
 	for path in ships_path:
 		if not path in listed_paths:
 			listed_paths.append(path)
