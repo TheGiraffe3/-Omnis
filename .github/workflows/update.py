@@ -97,23 +97,23 @@ def filter_objs(obj_paths, obj_names, objs, ships_exclude, outfits_exclude):
 						variantsall.append(name)
 						variantsall_path.append(path)
 				arena_text += '' + \
-					'planet "' + ship + ' "\n' + \
+					'planet "' + obj_name + ' "\n' + \
 					'	bribe 0\n' + \
 					'	government "Arena"\n' + \
 					'	tribute 1\n' + \
-					'		fleet "' + ship + ' "\n' + \
+					'		fleet "' + obj_name + ' "\n' + \
 					'		threshold 0\n' + \
-					'planet "' + ship + '  "\n' + \
+					'planet "' + obj_name + '  "\n' + \
 					'	bribe 0\n' + \
 					'	government "Arena"\n' + \
 					'	tribute 1\n' + \
-					'		fleet "' + ship + ' "\n' + \
+					'		fleet "' + obj_name + ' "\n' + \
 					'		threshold 0\n' + \
-					'fleet "' + ship + ' "\n' + \
+					'fleet "' + obj_name + ' "\n' + \
 					'	government "Arena"\n' + \
 					'	personality "heroic"\n' + \
 					'	variant\n' + \
-					'		"' + ship + '"\n'
+					'		"' + obj_name + '"\n'
 		elif obj_name.startswith('outfit '):
 			if not any(excluded_part in obj_name.strip().replace('outfit ', '').replace('"', '') for excluded_part in outfits_exclude):
 				outfits.append(obj_name.strip().replace('outfit ', ''))
