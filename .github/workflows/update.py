@@ -152,6 +152,7 @@ def create_shipyards(ships, ships_path, variants, variants_path, variantsall, va
 				'	personality "heroic"' + \
 				'	variant' + \
 				'		"' + ship + '"'
+			print(f"Generated arena text for {ship}.")
 		if has_no_content == True:
 			shipyards_text += '	"dummy"\n'
 		shipyards_text += '\n'
