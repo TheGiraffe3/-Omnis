@@ -132,6 +132,24 @@ def create_shipyards(ships, ships_path, variants, variants_path, variantsall, va
 			if ships_path[index] == shipyard:
 				shipyards_text += '	' + ship + '\n'
 				has_no_content = False
+			arena_text += '' + \
+			'planet "' + ship + ' "' + \
+			'	bribe 0' + \
+			'	government "Arena"' + \
+			'	tribute 1' + \
+			'		fleet "' + ship + ' "' + \
+			'		threshold 0' + \
+			'planet "' + ship + '  "' + \
+			'	bribe 0' + \
+			'	government "Arena"' + \
+			'	tribute 1' + \
+			'		fleet "' + ship + ' "' + \
+			'		threshold 0' + \
+			'fleet "' + ship + '" ' + \
+			'	government "Arena"' + \
+			'	personality "heroic"' + \
+			'	variant' + \
+			'		"' + ship + '"'
 		if has_no_content == True:
 			shipyards_text += '	"dummy"\n'
 		shipyards_text += '\n'
@@ -153,7 +171,7 @@ def create_shipyards(ships, ships_path, variants, variants_path, variantsall, va
 		if has_no_content == True:
 			variantsall_text += '	"dummy"\n'
 		variantsall_text += '\n'
-	return shipyards_text, variants_text, variantsall_text
+	return shipyards_text, variants_text, variantsall_text, arena_text
 
 
 def create_outfitter(outfits, outfits_path):
@@ -198,20 +216,26 @@ def create_outfitter(outfits, outfits_path):
 	return outfitter_text
 
 
-def write_files(sales_file, shipyards_text, outfitter_text, variants_text, variantsall_text):
+def write_sales(sales_file, shipyards_text, outfitter_text, variants_text, variantsall_text):
 	# write text files
 	merged_file = shipyards_text + '\n\n' + variants_text + '\n\n' + variantsall_text + outfitter_text
 	with open(sales_file, 'w') as target:
 		target.writelines(merged_file)
 
+def write_arena(arena_file, arena_text):
+	# write text files
+	with open(arena_file, 'w') as target:
+		target.writelines(arena_text)
 
 if __name__ == "__main__":
 	data_folder = 'es-data/'
+	arena_file = 'data/arena.txt'
 	sales_file = 'data/sales.txt'
 	ships_exclude = ['Cloak Check', 'Asteroid Planet', 'Asteroid Blocker', '_Ion Timer Ship', 'Rescue Dummy', 'Timer Ship']
 	outfits_exclude = ['Orchid Active', 'Orchid Boost', 'Orchid Coast', 'Orchid Divert', 'Orchid Terminal', 'Orchid Boost Stage Expended', 'Orchid Divert Stage Expended', 'Ophrys Terminal', 'ion hail', 'rslug', 'Blaster Submunition', 'Modified Blaster Submunition', 'gbullet', 'Suicide Gun', '_Ion Storm Timer: Generator', 'Timer Weapon', 'Timer Submunition', 'Shard inactive', 'static', 'print', 'asteroid fragment', 'magic deployer', 'asteroid missile', 'asteroid launch', 'ribault guided', 'ribault unguided', 'plasma particle', 'asteroid laser']
 	objs, obj_paths, obj_names = read_everything(data_folder)
 	ships, ships_path, outfits, outfits_path, variants, variants_path, variantsall, variantsall_path = filter_objs(obj_paths, obj_names, objs, ships_exclude, outfits_exclude)
-	shipyards_text, variants_text, variantsall_text = create_shipyards(ships, ships_path, variants, variants_path, variantsall, variantsall_path)
+	shipyards_text, variants_text, variantsall_text, arena_text = create_shipyards(ships, ships_path, variants, variants_path, variantsall, variantsall_path)
 	outfitter_text = create_outfitter(outfits, outfits_path)
-	write_files(sales_file, shipyards_text, outfitter_text, variants_text, variantsall_text)
+	write_sales(sales_file, shipyards_text, outfitter_text, variants_text, variantsall_text)
+	write_arena(arena_file, arena_text)

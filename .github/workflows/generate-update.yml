@@ -1,6 +1,7 @@
 name: Generate Data
 
 on:
+  push:
   schedule:
     - cron: '0 0 1 * *' # the first day of every month
   workflow_dispatch:
@@ -39,8 +40,9 @@ jobs:
           echo $BRANCH
           git config user.name "github-actions[bot]"
           git config user.email "actions@github.com"
+          git add "data/arena.txt"
           git add "data/sales.txt"
-          git diff-index --quiet HEAD || git commit -m "Updated sales"
+          git diff-index --quiet HEAD || git commit -m "Updated data files"
       - name: Get commit SHA
         run: |
           echo "COMMIT_SHA=$(git rev-parse HEAD)" >> $GITHUB_ENV
@@ -54,4 +56,5 @@ jobs:
       - name: Push files and create a pull request
         run: |
           git push -f --set-upstream origin HEAD:$BRANCH
-          gh pr create --base main --body "Automatic sales update." --head ${{ github.repository_owner }}:$BRANCH -t "auto-generated sales update" --repo EndlessSkyCommunity/-Omnis
+          
+# gh pr create --base main --body "Automatic vanilla compatibility update." --head ${{ github.repository_owner }}:$BRANCH -t "auto-generated data update" --repo EndlessSkyCommunity/-Omnis
