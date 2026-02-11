@@ -66,6 +66,7 @@ def filter_objs(obj_paths, obj_names, objs, ships_exclude, outfits_exclude):
 	# filter all outfits and ships out of all nodes and save them with their paths
 	print('filtering objects')
 	ships, ships_path, outfits, outfits_path, variants, variants_path, variantsall, variantsall_path = [], [], [], [], [], [], [], []
+	arena_text = ''
 	for obj_name in obj_names:
 		index = obj_names.index(obj_name)
 		path = obj_paths[index].split(os.sep)[1]
@@ -95,19 +96,37 @@ def filter_objs(obj_paths, obj_names, objs, ships_exclude, outfits_exclude):
 					else:
 						variantsall.append(name)
 						variantsall_path.append(path)
+				arena_text += '' + \
+					'planet "' + ship + ' "\n' + \
+					'	bribe 0\n' + \
+					'	government "Arena"\n' + \
+					'	tribute 1\n' + \
+					'		fleet "' + ship + ' "\n' + \
+					'		threshold 0\n' + \
+					'planet "' + ship + '  "\n' + \
+					'	bribe 0\n' + \
+					'	government "Arena"\n' + \
+					'	tribute 1\n' + \
+					'		fleet "' + ship + ' "\n' + \
+					'		threshold 0\n' + \
+					'fleet "' + ship + ' "\n' + \
+					'	government "Arena"\n' + \
+					'	personality "heroic"\n' + \
+					'	variant\n' + \
+					'		"' + ship + '"\n'
 		elif obj_name.startswith('outfit '):
 			if not any(excluded_part in obj_name.strip().replace('outfit ', '').replace('"', '') for excluded_part in outfits_exclude):
 				outfits.append(obj_name.strip().replace('outfit ', ''))
 				outfits_path.append(path)
 	print('		' + str(len(ships)) + ' ships found')
 	print('		' + str(len(outfits)) + ' outfits found')
-	return ships, ships_path, outfits, outfits_path, variants, variants_path, variantsall, variantsall_path
+	return ships, ships_path, outfits, outfits_path, variants, variants_path, variantsall, variantsall_path, arena_text
 
 
 def create_shipyards(ships, ships_path, variants, variants_path, variantsall, variantsall_path):
 	# create a text containing all shipyards and the matching ships
 	listed_paths = []
-	shipyards_text, variants_text, variantsall_text, arena_text = '', '', '', ''
+	shipyards_text, variants_text, variantsall_text = '', '', ''
 	for path in ships_path:
 		if not path in listed_paths:
 			listed_paths.append(path)
@@ -132,25 +151,6 @@ def create_shipyards(ships, ships_path, variants, variants_path, variantsall, va
 			if ships_path[index] == shipyard:
 				shipyards_text += '	' + ship + '\n'
 				has_no_content = False
-			ship = ship.replace('"','')
-			arena_text += '' + \
-				'planet "' + ship + ' "\n' + \
-				'	bribe 0\n' + \
-				'	government "Arena"\n' + \
-				'	tribute 1\n' + \
-				'		fleet "' + ship + ' "\n' + \
-				'		threshold 0\n' + \
-				'planet "' + ship + '  "\n' + \
-				'	bribe 0\n' + \
-				'	government "Arena"\n' + \
-				'	tribute 1\n' + \
-				'		fleet "' + ship + ' "\n' + \
-				'		threshold 0\n' + \
-				'fleet "' + ship + ' "\n' + \
-				'	government "Arena"\n' + \
-				'	personality "heroic"\n' + \
-				'	variant\n' + \
-				'		"' + ship + '"\n'
 		if has_no_content == True:
 			shipyards_text += '	"dummy"\n'
 		shipyards_text += '\n'
@@ -172,7 +172,7 @@ def create_shipyards(ships, ships_path, variants, variants_path, variantsall, va
 		if has_no_content == True:
 			variantsall_text += '	"dummy"\n'
 		variantsall_text += '\n'
-	return shipyards_text, variants_text, variantsall_text, arena_text
+	return shipyards_text, variants_text, variantsall_text
 
 
 def create_outfitter(outfits, outfits_path):
@@ -235,8 +235,8 @@ if __name__ == "__main__":
 	ships_exclude = ['Cloak Check', 'Asteroid Planet', 'Asteroid Blocker', '_Ion Timer Ship', 'Rescue Dummy', 'Timer Ship']
 	outfits_exclude = ['Orchid Active', 'Orchid Boost', 'Orchid Coast', 'Orchid Divert', 'Orchid Terminal', 'Orchid Boost Stage Expended', 'Orchid Divert Stage Expended', 'Ophrys Terminal', 'ion hail', 'rslug', 'Blaster Submunition', 'Modified Blaster Submunition', 'gbullet', 'Suicide Gun', '_Ion Storm Timer: Generator', 'Timer Weapon', 'Timer Submunition', 'Shard inactive', 'static', 'print', 'asteroid fragment', 'magic deployer', 'asteroid missile', 'asteroid launch', 'ribault guided', 'ribault unguided', 'plasma particle', 'asteroid laser']
 	objs, obj_paths, obj_names = read_everything(data_folder)
-	ships, ships_path, outfits, outfits_path, variants, variants_path, variantsall, variantsall_path = filter_objs(obj_paths, obj_names, objs, ships_exclude, outfits_exclude)
-	shipyards_text, variants_text, variantsall_text, arena_text = create_shipyards(ships, ships_path, variants, variants_path, variantsall, variantsall_path)
+	ships, ships_path, outfits, outfits_path, variants, variants_path, variantsall, variantsall_path, arena_text = filter_objs(obj_paths, obj_names, objs, ships_exclude, outfits_exclude)
+	shipyards_text, variants_text, variantsall_text = create_shipyards(ships, ships_path, variants, variants_path, variantsall, variantsall_path)
 	outfitter_text = create_outfitter(outfits, outfits_path)
 	write_sales(sales_file, shipyards_text, outfitter_text, variants_text, variantsall_text)
 	write_arena(arena_file, arena_text)
