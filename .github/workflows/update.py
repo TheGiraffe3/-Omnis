@@ -132,6 +132,7 @@ def create_shipyards(ships, ships_path, variants, variants_path, variantsall, va
 			if ships_path[index] == shipyard:
 				shipyards_text += '	' + ship + '\n'
 				has_no_content = False
+			ship = ship.replace('"','')
 			arena_text += '' + \
 				'planet "' + ship + ' "\n' + \
 				'	bribe 0\n' + \
@@ -150,7 +151,6 @@ def create_shipyards(ships, ships_path, variants, variants_path, variantsall, va
 				'	personality "heroic"\n' + \
 				'	variant\n' + \
 				'		"' + ship + '"\n'
-		print(arena_text)
 		if has_no_content == True:
 			shipyards_text += '	"dummy"\n'
 		shipyards_text += '\n'
