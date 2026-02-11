@@ -129,27 +129,29 @@ def create_shipyards(ships, ships_path, variants, variants_path, variantsall, va
 		has_no_content = True
 		for ship in ships:
 			index = ships.index(ship)
+			print(f"Before the `if` for {ship}.")
 			if ships_path[index] == shipyard:
 				shipyards_text += '	' + ship + '\n'
 				has_no_content = False
+			print(f"Attempting to generate arena text for {ship}.")
 			arena_text += '' + \
-			'planet "' + ship + ' "' + \
-			'	bribe 0' + \
-			'	government "Arena"' + \
-			'	tribute 1' + \
-			'		fleet "' + ship + ' "' + \
-			'		threshold 0' + \
-			'planet "' + ship + '  "' + \
-			'	bribe 0' + \
-			'	government "Arena"' + \
-			'	tribute 1' + \
-			'		fleet "' + ship + ' "' + \
-			'		threshold 0' + \
-			'fleet "' + ship + '" ' + \
-			'	government "Arena"' + \
-			'	personality "heroic"' + \
-			'	variant' + \
-			'		"' + ship + '"'
+				'planet "' + ship + ' "' + \
+				'	bribe 0' + \
+				'	government "Arena"' + \
+				'	tribute 1' + \
+				'		fleet "' + ship + ' "' + \
+				'		threshold 0' + \
+				'planet "' + ship + '  "' + \
+				'	bribe 0' + \
+				'	government "Arena"' + \
+				'	tribute 1' + \
+				'		fleet "' + ship + ' "' + \
+				'		threshold 0' + \
+				'fleet "' + ship + '" ' + \
+				'	government "Arena"' + \
+				'	personality "heroic"' + \
+				'	variant' + \
+				'		"' + ship + '"'
 		if has_no_content == True:
 			shipyards_text += '	"dummy"\n'
 		shipyards_text += '\n'
