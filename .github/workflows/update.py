@@ -133,24 +133,24 @@ def create_shipyards(ships, ships_path, variants, variants_path, variantsall, va
 				shipyards_text += '	' + ship + '\n'
 				has_no_content = False
 			arena_text += '' + \
-				'planet "' + ship + ' "' + \
-				'	bribe 0' + \
-				'	government "Arena"' + \
-				'	tribute 1' + \
-				'		fleet "' + ship + ' "' + \
-				'		threshold 0' + \
-				'planet "' + ship + '  "' + \
-				'	bribe 0' + \
-				'	government "Arena"' + \
-				'	tribute 1' + \
-				'		fleet "' + ship + ' "' + \
-				'		threshold 0' + \
-				'fleet "' + ship + '" ' + \
-				'	government "Arena"' + \
-				'	personality "heroic"' + \
-				'	variant' + \
-				'		"' + ship + '"'
-			print(arena_text)
+				'planet "' + ship + ' "\n' + \
+				'	bribe 0\n' + \
+				'	government "Arena"\n' + \
+				'	tribute 1\n' + \
+				'		fleet "' + ship + ' "\n' + \
+				'		threshold 0\n' + \
+				'planet "' + ship + '  "\n' + \
+				'	bribe 0\n' + \
+				'	government "Arena"\n' + \
+				'	tribute 1\n' + \
+				'		fleet "' + ship + ' "\n' + \
+				'		threshold 0\n' + \
+				'fleet "' + ship + ' "\n' + \
+				'	government "Arena"\n' + \
+				'	personality "heroic"\n' + \
+				'	variant\n' + \
+				'		"' + ship + '"\n'
+		print(arena_text)
 		if has_no_content == True:
 			shipyards_text += '	"dummy"\n'
 		shipyards_text += '\n'
