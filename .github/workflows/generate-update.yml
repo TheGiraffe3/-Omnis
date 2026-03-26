@@ -1,8 +1,6 @@
 name: Generate Data
 
 on:
-  schedule:
-    - cron: '0 0 1 * *' # the first day of every month
   workflow_dispatch:
 
 permissions:
